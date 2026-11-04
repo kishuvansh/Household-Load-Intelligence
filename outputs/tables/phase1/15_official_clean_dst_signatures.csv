@@ -1,0 +1,29 @@
+House,Date,Change,Rows_23h_prev_day,Rows_00h_UTC,Rows_01h_UTC,Rows_02h_UTC,Signature
+1,2013-10-27,autumn,0,600,881,597,doubled 01:00 UTC hour (local-clock repeated hour)
+1,2014-03-30,spring,843,0,600,600,empty 00:00 UTC hour
+1,2014-10-26,autumn,534,534,986,535,doubled 01:00 UTC hour (local-clock repeated hour)
+1,2015-03-29,spring,536,542,0,537,empty 01:00 UTC hour (local-clock spring jump)
+2,2013-10-27,autumn,0,0,0,0,no data
+2,2014-03-30,spring,859,0,600,592,empty 00:00 UTC hour
+2,2014-10-26,autumn,544,543,1057,541,doubled 01:00 UTC hour (local-clock repeated hour)
+2,2015-03-29,spring,538,536,0,535,empty 01:00 UTC hour (local-clock spring jump)
+5,2013-10-27,autumn,0,598,839,600,doubled 01:00 UTC hour (local-clock repeated hour)
+5,2014-03-30,spring,944,0,542,593,empty 00:00 UTC hour
+5,2014-10-26,autumn,532,534,798,534,normal density (consistent with UTC)
+5,2015-03-29,spring,533,533,0,530,empty 01:00 UTC hour (local-clock spring jump)
+7,2013-10-27,autumn,0,0,0,0,no data
+7,2014-03-30,spring,893,0,596,581,empty 00:00 UTC hour
+7,2014-10-26,autumn,541,542,983,542,doubled 01:00 UTC hour (local-clock repeated hour)
+7,2015-03-29,spring,536,536,0,541,empty 01:00 UTC hour (local-clock spring jump)
+8,2013-10-27,autumn,0,0,0,0,no data
+8,2014-03-30,spring,880,0,595,593,empty 00:00 UTC hour
+8,2014-10-26,autumn,527,529,973,530,doubled 01:00 UTC hour (local-clock repeated hour)
+8,2015-03-29,spring,530,525,0,527,empty 01:00 UTC hour (local-clock spring jump)
+9,2013-10-27,autumn,0,0,0,0,no data
+9,2014-03-30,spring,879,1,598,599,empty 00:00 UTC hour
+9,2014-10-26,autumn,525,525,1011,531,doubled 01:00 UTC hour (local-clock repeated hour)
+9,2015-03-29,spring,524,524,0,522,empty 01:00 UTC hour (local-clock spring jump)
+15,2013-10-27,autumn,0,0,0,0,no data
+15,2014-03-30,spring,895,0,595,582,empty 00:00 UTC hour
+15,2014-10-26,autumn,537,540,976,538,doubled 01:00 UTC hour (local-clock repeated hour)
+15,2015-03-29,spring,536,544,0,535,empty 01:00 UTC hour (local-clock spring jump)

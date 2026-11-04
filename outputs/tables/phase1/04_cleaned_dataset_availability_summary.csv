@@ -1,0 +1,11 @@
+Channel,Appliance_Name,Total_Minutes,Valid_Minutes,Missing_Minutes,Availability_Pct,Zero_Pct,Active_Pct,Mean_Active_Power_W,Max_Power_W
+Aggregate,Mains Whole-House,920033,798013,122020,86.74,0.0,86.74,479.2,23971.3
+Appliance1,Fridge,920033,797117,122916,86.64,65.14,21.5,71.1,3072.0
+Appliance2,Freezer (1),920033,796421,123612,86.56,55.15,31.42,45.8,2099.0
+Appliance3,Freezer (2),920033,797348,122685,86.67,50.42,36.24,69.6,564.2
+Appliance4,Washer Dryer,920033,797653,122380,86.7,86.26,0.43,378.1,2688.9
+Appliance5,Washing Machine,920033,788647,131386,85.72,83.66,2.06,452.0,2461.6
+Appliance6,Dishwasher,920033,797949,122084,86.73,85.86,0.87,1125.2,2383.4
+Appliance7,Computer,920033,798760,121273,86.82,76.72,10.1,21.4,2049.0
+Appliance8,Television Site,920033,797653,122380,86.7,70.51,16.19,31.3,1314.1
+Appliance9,Electric Heater,920033,703664,216369,76.48,0.0,76.48,76.9,2087.1

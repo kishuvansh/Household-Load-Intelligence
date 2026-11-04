@@ -1,0 +1,11 @@
+Channel,Appliance_Name,Physical_Limit_Watts,Part1_Max_Watts,Part1_Negative_Count,Part1_Above_Limit_Count,Part2_Max_Watts,Part2_Negative_Count,Part2_Above_Limit_Count,Total_Flagged_Glitches
+Aggregate,Mains Whole-House,25000.0,24000.0,0,0,29159.0,0,3,3
+Appliance1,Fridge,4000.0,69629.0,0,662,76677.0,0,184,846
+Appliance2,Freezer (1),4000.0,98301.0,0,18,66685.0,0,22,40
+Appliance3,Freezer (2),4000.0,32751.0,0,38,73725.0,0,80,118
+Appliance4,Washer Dryer,4000.0,98301.0,0,2014,98301.0,0,71,2085
+Appliance5,Washing Machine,4000.0,32767.0,0,156,73725.0,0,65,221
+Appliance6,Dishwasher,4000.0,14336.0,0,24,37610.0,0,12,36
+Appliance7,Computer,4000.0,98299.0,0,3,73725.0,0,371,374
+Appliance8,Television Site,4000.0,65549.0,0,88,98301.0,0,91,179
+Appliance9,Electric Heater,4000.0,65535.0,0,35,32737.0,0,15,50

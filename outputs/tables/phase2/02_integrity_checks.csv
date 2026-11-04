@@ -1,0 +1,7 @@
+house,file,raw_rows,nan_values,non_monotonic_steps,duplicate_unix,negative_values,wm_max_w,aggregate_max_w,wm_frozen_samples,aggregate_frozen_samples,wm_frozen_minutes
+2,CLEAN_House2.csv,5733526,0,0,0,0,3584.0,24595.0,0,31699,0
+5,CLEAN_House5.csv,7430755,0,0,0,0,2437.0,41738.0,160417,5880,17228
+7,CLEAN_House7.csv,6756034,0,0,0,0,3584.0,32730.0,92,8705,0
+8,CLEAN_House8.csv,6118469,0,0,0,0,3972.0,25358.0,0,34361,0
+9,CLEAN_House9.csv,6169525,0,0,0,0,2484.0,28836.0,0,319996,0
+15,CLEAN_House15.csv,6225696,0,0,0,0,3336.0,8840.0,2101,27972,225

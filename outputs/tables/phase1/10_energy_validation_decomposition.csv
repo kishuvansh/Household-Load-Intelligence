@@ -1,0 +1,19 @@
+Channel,Window,Step,What_Changed,Raw_kWh,Cleaned_kWh,Diff_kWh,Pct_Diff
+Aggregate,48 h household load,A,"Original calculation: raw rows in the original raw window (inclusive), weighted by time since previous row; cleaned minutes inclusive of end minute",37.2977,37.3228,0.0252,0.07
+Aggregate,48 h household load,B,"A, with the raw window moved to the same UTC interval as the cleaned window",37.2977,37.3228,0.0252,0.07
+Aggregate,48 h household load,C,"B, with each raw reading held until the next row (as the resampler does)",37.3551,37.3228,-0.0322,-0.09
+Aggregate,48 h household load,D,"C, with half-open windows [start, end) on both sides (end minute excluded)",37.3551,37.3196,-0.0355,-0.09
+Aggregate,48 h household load,E,Revised method: exact held-interval integral (channel hold limit) vs revised 1-minute means x 60 s,37.3554,37.3542,-0.0012,-0.0
+Aggregate,48 h household load,F,Sensitivity: raw held with no hold limit (until next reading) vs revised 1-minute means x 60 s,37.6567,37.3542,-0.3025,-0.8
+Appliance5,Washing-machine cycle,A,"Original calculation: raw rows in the original raw window (inclusive), weighted by time since previous row; cleaned minutes inclusive of end minute",0.4913,0.5355,0.0441,8.99
+Appliance5,Washing-machine cycle,B,"A, with the raw window moved to the same UTC interval as the cleaned window",0.5331,0.5355,0.0023,0.44
+Appliance5,Washing-machine cycle,C,"B, with each raw reading held until the next row (as the resampler does)",0.5356,0.5355,-0.0002,-0.03
+Appliance5,Washing-machine cycle,D,"C, with half-open windows [start, end) on both sides (end minute excluded)",0.5356,0.5355,-0.0002,-0.03
+Appliance5,Washing-machine cycle,E,Revised method: exact held-interval integral (channel hold limit) vs revised 1-minute means x 60 s,0.5356,0.5356,0.0,0.0
+Appliance5,Washing-machine cycle,F,Sensitivity: raw held with no hold limit (until next reading) vs revised 1-minute means x 60 s,0.5356,0.5356,0.0,0.0
+Appliance1,12 h fridge cycling,A,"Original calculation: raw rows in the original raw window (inclusive), weighted by time since previous row; cleaned minutes inclusive of end minute",0.1462,0.1476,0.0015,1.02
+Appliance1,12 h fridge cycling,B,"A, with the raw window moved to the same UTC interval as the cleaned window",0.1462,0.1476,0.0015,1.02
+Appliance1,12 h fridge cycling,C,"B, with each raw reading held until the next row (as the resampler does)",0.1469,0.1476,0.0007,0.49
+Appliance1,12 h fridge cycling,D,"C, with half-open windows [start, end) on both sides (end minute excluded)",0.1469,0.1464,-0.0006,-0.39
+Appliance1,12 h fridge cycling,E,Revised method: exact held-interval integral (channel hold limit) vs revised 1-minute means x 60 s,0.148,0.1476,-0.0004,-0.3
+Appliance1,12 h fridge cycling,F,Sensitivity: raw held with no hold limit (until next reading) vs revised 1-minute means x 60 s,0.1616,0.1476,-0.0141,-8.72

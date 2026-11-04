@@ -1,0 +1,6 @@
+house,frozen_agg_minutes,wm_exact_zero_pct_during_frozen,wm_exact_zero_pct_usable,wm_active_pct_during_frozen,wm_active_pct_usable
+2,6502,100.0,94.4,0.0,4.69
+7,4827,99.4,74.7,0.31,8.33
+8,7935,79.5,84.1,1.54,3.36
+9,38443,97.9,90.2,0.0,2.83
+15,6568,100.0,96.2,0.0,2.87

@@ -1,0 +1,11 @@
+# Tested with Python 3.13.5 on macOS
+pandas==2.3.1
+numpy==2.3.2
+matplotlib==3.10.5
+pyarrow==23.0.0
+lightgbm==4.6.0
+# notebooks (optional for the scripts, needed for ./run_all.sh --notebooks)
+jupyter
+nbconvert==7.17.0
+nbformat
+ipykernel==6.30.1

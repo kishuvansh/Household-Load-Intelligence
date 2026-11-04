@@ -1,0 +1,48 @@
+Comparison,Period,Clock_Regime,Best_Lag_Min,Corr_Best,Corr_Lag0,Corr_Lag_Plus60,Corr_Lag_Minus60,Minutes
+Official CLEAN_House1 vs raw Part 1 (canonical UTC),2013-10,BST,0,0.999,0.999,0.254,0.254,31610
+Official CLEAN_House1 vs raw Part 1 (stored Unix),2013-10,BST,-60,0.652,0.616,0.213,0.652,31456
+Official CLEAN_House1 vs raw Part 1 (canonical UTC),2013-11,GMT,0,0.999,0.999,0.199,0.198,40787
+Official CLEAN_House1 vs raw Part 1 (stored Unix),2013-11,GMT,0,0.999,0.999,0.199,0.198,40787
+Official CLEAN_House1 vs raw Part 1 (canonical UTC),2013-12,GMT,0,0.999,0.999,0.173,0.173,43292
+Official CLEAN_House1 vs raw Part 1 (stored Unix),2013-12,GMT,0,0.999,0.999,0.173,0.173,43292
+Official CLEAN_House1 vs raw Part 1 (canonical UTC),2014-01,GMT,0,0.999,0.999,0.197,0.197,32269
+Official CLEAN_House1 vs raw Part 1 (stored Unix),2014-01,GMT,0,0.999,0.999,0.197,0.197,32269
+Official CLEAN_House1 vs raw Part 1 (canonical UTC),2014-03,GMT,0,1.0,1.0,0.366,0.365,36280
+Official CLEAN_House1 vs raw Part 1 (stored Unix),2014-03,GMT,0,0.944,0.944,0.358,0.423,36214
+Official CLEAN_House1 vs raw Part 1 (canonical UTC),2014-04,BST,0,0.999,0.999,0.097,0.098,43018
+Official CLEAN_House1 vs raw Part 1 (stored Unix),2014-04,BST,-60,0.999,0.097,0.045,0.999,43018
+Official CLEAN_House1 vs raw Part 1 (canonical UTC),2014-05,BST,0,0.999,0.999,0.057,0.057,44480
+Official CLEAN_House1 vs raw Part 1 (stored Unix),2014-05,BST,-60,0.999,0.057,0.023,0.999,44480
+Official CLEAN_House1 vs raw Part 1 (canonical UTC),2014-06,BST,0,0.999,0.999,0.048,0.048,43068
+Official CLEAN_House1 vs raw Part 1 (stored Unix),2014-06,BST,-60,0.999,0.048,-0.0,0.999,43068
+Official CLEAN_House1 vs raw Part 1 (canonical UTC),2014-07,BST,0,0.999,0.999,0.022,0.022,43770
+Official CLEAN_House1 vs raw Part 1 (stored Unix),2014-07,BST,-60,0.999,0.022,0.001,0.999,43770
+Official CLEAN_House1 vs raw Part 1 (canonical UTC),2014-08,BST,0,0.999,0.999,0.032,0.032,40894
+Official CLEAN_House1 vs raw Part 1 (stored Unix),2014-08,BST,-60,0.999,0.032,0.015,0.999,40894
+Official CLEAN_House1 vs raw Part 1 (canonical UTC),2014-09,BST,0,0.999,0.999,0.061,0.061,36776
+Official CLEAN_House1 vs raw Part 1 (stored Unix),2014-09,BST,-60,0.999,0.061,0.034,0.999,36776
+Official CLEAN_House1 vs raw Part 2 (canonical UTC),2014-10,BST,60,0.863,0.205,0.863,0.046,42132
+Official CLEAN_House1 vs raw Part 2 (stored Unix),2014-10,BST,0,0.999,0.999,0.069,0.068,42316
+Official CLEAN_House1 vs raw Part 2 (canonical UTC),2014-11,GMT,0,0.999,0.999,0.06,0.059,42360
+Official CLEAN_House1 vs raw Part 2 (stored Unix),2014-11,GMT,0,0.999,0.999,0.06,0.059,42360
+Official CLEAN_House1 vs raw Part 2 (canonical UTC),2014-12,GMT,0,0.999,0.999,0.129,0.129,43142
+Official CLEAN_House1 vs raw Part 2 (stored Unix),2014-12,GMT,0,0.999,0.999,0.129,0.129,43142
+Official CLEAN_House1 vs raw Part 2 (canonical UTC),2015-01,GMT,0,0.998,0.998,0.075,0.074,44473
+Official CLEAN_House1 vs raw Part 2 (stored Unix),2015-01,GMT,0,0.998,0.998,0.075,0.074,44473
+Official CLEAN_House1 vs raw Part 2 (canonical UTC),2015-02,GMT,0,0.999,0.999,0.373,0.374,40268
+Official CLEAN_House1 vs raw Part 2 (stored Unix),2015-02,GMT,0,0.999,0.999,0.373,0.374,40268
+Official CLEAN_House1 vs raw Part 2 (canonical UTC),2015-03,GMT,0,0.888,0.888,0.394,0.274,38058
+Official CLEAN_House1 vs raw Part 2 (stored Unix),2015-03,GMT,0,1.0,1.0,0.28,0.279,38118
+Official CLEAN_House1 vs raw Part 2 (canonical UTC),2015-04,BST,60,1.0,0.068,1.0,0.016,35879
+Official CLEAN_House1 vs raw Part 2 (stored Unix),2015-04,BST,0,1.0,1.0,0.068,0.068,35879
+Official CLEAN_House1 vs raw Part 2 (canonical UTC),2015-05,BST,60,1.0,0.029,1.0,0.019,29127
+Official CLEAN_House1 vs raw Part 2 (stored Unix),2015-05,BST,0,1.0,1.0,0.029,0.029,29127
+Official CLEAN_House1 vs raw Part 2 (canonical UTC),2015-06,BST,60,1.0,0.046,1.0,0.032,32296
+Official CLEAN_House1 vs raw Part 2 (stored Unix),2015-06,BST,0,1.0,1.0,0.046,0.046,32296
+Official CLEAN_House1 vs raw Part 2 (canonical UTC),2015-07,BST,60,1.0,0.029,1.0,0.025,13418
+Official CLEAN_House1 vs raw Part 2 (stored Unix),2015-07,BST,0,1.0,1.0,0.029,0.029,13418
+Raw Part 1 vs raw Part 2 (both canonical UTC),2014-06-28 to 2014-07-15,BST,0,0.895,0.895,0.008,0.01,22985
+Raw Part 1 vs raw Part 2 (both canonical UTC),2014-07-15 to 2014-08-01,BST,-2,0.797,0.568,0.02,0.038,24182
+Raw Part 1 vs raw Part 2 (both canonical UTC),2014-08-01 to 2014-08-28,BST,-1,0.765,0.705,0.034,0.038,37102
+Raw Part 1 vs raw Part 2 (both canonical UTC),2014-09-01 to 2014-09-27,BST,0,0.975,0.975,0.052,0.049,31024
+Raw Part 1 vs raw Part 2 (both canonical UTC),2014-09-27 to 2014-10-01,BST,0,0.963,0.963,-0.069,-0.061,5708

@@ -1,0 +1,38 @@
+Check,Passed,Detail
+Part 1: UTC offset is 0 or 3600 s on every row,True,"[np.int64(0), np.int64(3600)]"
+Part 1: canonical UTC never decreases in file order,True,backward steps = 0
+Part 1: every repeated local hour resolved or removed,True,"[{'date': '2013-10-27', 'rows': 1199, 'resolution': 'resolved by file order', 'rows_removed': 0}]"
+Part 2: UTC offset is 0 or 3600 s on every row,True,"[np.int64(0), np.int64(3600)]"
+Part 2: canonical UTC never decreases in file order,True,backward steps = 0
+Part 2: every repeated local hour resolved or removed,True,"[{'date': '2014-10-26', 'rows': 986, 'resolution': 'unresolvable - rows removed', 'rows_removed': 986}]"
+Spring clock changes: canonical UTC step < 60 s,True,"[{'Part': 1, 'Date': '2014-03-30', 'Largest_Local_Step_s': 3604.0, 'Largest_Canonical_UTC_Step_s': 13.0}, {'Part': 2, 'Date': '2015-03-29', 'Largest_Local_Step_s': 3607.0, 'Largest_Canonical_UTC_Step_s': 18.0}]"
+Autumn clock changes: no backward step in canonical UTC,True,
+Combined index unique and strictly increasing,True,
+"Handoff: Part 1 ends at or before, Part 2 starts after the handoff",True,1411825869 <= 1411825872 < 1411825878
+"Part 1: de-duplication keeps every (second, channel) reading",True,
+"Part 2: de-duplication keeps every (second, channel) reading",True,
+Aggregate: no readings outside physical limits,True,
+Appliance1: no readings outside physical limits,True,
+Appliance2: no readings outside physical limits,True,
+Appliance3: no readings outside physical limits,True,
+Appliance4: no readings outside physical limits,True,
+Appliance5: no readings outside physical limits,True,
+Appliance6: no readings outside physical limits,True,
+Appliance7: no readings outside physical limits,True,
+Appliance8: no readings outside physical limits,True,
+Appliance9: no readings outside physical limits,True,
+"Coverage per minute within [0, 60] s",True,
+Minutes with < 30 s coverage are missing,True,
+Minutes with >= 30 s coverage have a value,True,
+Outages >= 24 h stay missing (no Aggregate values inside),True,"12 outages, 0 values inside"
+Aggregate: minute integration conserves held-signal energy exactly,True,relative error 0.00e+00
+Appliance1: minute integration conserves held-signal energy exactly,True,relative error 0.00e+00
+Appliance2: minute integration conserves held-signal energy exactly,True,relative error 0.00e+00
+Appliance3: minute integration conserves held-signal energy exactly,True,relative error 0.00e+00
+Appliance4: minute integration conserves held-signal energy exactly,True,relative error 0.00e+00
+Appliance5: minute integration conserves held-signal energy exactly,True,relative error 0.00e+00
+Appliance6: minute integration conserves held-signal energy exactly,True,relative error 0.00e+00
+Appliance7: minute integration conserves held-signal energy exactly,True,relative error 0.00e+00
+Appliance8: minute integration conserves held-signal energy exactly,True,relative error 0.00e+00
+Appliance9: minute integration conserves held-signal energy exactly,True,relative error 0.00e+00
+Energy windows: like-for-like residual ~ 0,True,

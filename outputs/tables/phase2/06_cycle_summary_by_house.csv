@@ -1,0 +1,7 @@
+house,occupancy,observed_days,activity_periods,likely_cycles,complete_cycles,gap_affected_cycles,short_small_periods,long_periods_gt300min,cycles_per_week,cycles_per_week_per_occupant,duration_min_median,duration_min_q25,duration_min_q75,energy_kwh_median,energy_kwh_q25,energy_kwh_q75,peak_w_median,heated_cycle_pct,heating_min_median,active_min_per_observed_day,wm_kwh_per_observed_day,wm_kwh_per_year_est,pct_wm_energy_in_likely_cycles,aggregate_kwh_per_observed_day,wm_share_of_aggregate_pct
+2,4,465.4,350,320,284,36,30,0,4.81,1.2,98.0,90.75,107.0,0.637,0.509,0.706,2092.0,100.0,15.0,67.5,0.434,158.0,99.6,11.06,3.96
+5,4,574.0,1079,666,569,97,398,15,8.12,2.03,45.0,35.0,76.0,0.293,0.209,0.476,2074.0,90.5,7.0,79.6,0.581,212.0,82.1,17.85,3.26
+7,4,536.0,906,833,793,40,72,1,10.88,2.72,61.0,57.0,107.0,0.549,0.454,0.651,2083.0,99.9,13.0,120.4,0.906,331.0,99.3,13.53,6.74
+8,2,498.1,432,369,359,10,63,0,5.19,2.59,60.0,51.0,77.0,0.786,0.62,1.263,2338.0,99.7,18.0,47.8,0.704,257.0,99.1,16.44,4.3
+9,2,480.7,265,242,233,9,23,0,3.52,1.76,74.0,69.0,80.0,0.667,0.519,0.886,2211.0,98.7,16.0,38.6,0.361,132.0,99.4,14.12,2.71
+15,1,489.7,372,248,234,14,124,0,3.55,3.55,93.0,59.25,126.0,0.723,0.395,1.298,2183.0,97.9,17.0,41.7,0.412,150.0,98.7,6.12,6.79

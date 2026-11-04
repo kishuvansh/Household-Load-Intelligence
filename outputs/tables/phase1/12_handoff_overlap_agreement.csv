@@ -1,0 +1,21 @@
+Period,Channel,Minutes_Both,Pct_Minutes_Within_5W,Part1_Distinct_Values,Part2_Distinct_Values,Part1_Max_W,Part2_Max_W
+7 days before handoff,Aggregate,10014,85.7,1035,1052,10894.3,10868.57142857143
+7 days before handoff,Appliance1,10014,98.6,88,98,453.9,240.28571428571428
+7 days before handoff,Appliance2,10014,97.0,81,93,437.3,234.5
+7 days before handoff,Appliance3,10014,97.7,88,101,337.9,213.0
+7 days before handoff,Appliance4,9989,99.8,33,32,2591.4,2583.8333333333335
+7 days before handoff,Appliance5,9856,98.0,170,169,2388.2,2388.0
+7 days before handoff,Appliance6,10014,99.6,56,58,2317.9,2312.625
+7 days before handoff,Appliance7,10014,99.6,38,38,46.6,45.285714285714285
+7 days before handoff,Appliance8,10014,99.4,49,50,52.6,54.8
+7 days before handoff,Appliance9,12,100.0,1,1,1.0,1.0
+after handoff to end of Part 1,Aggregate,4904,90.5,199,196,639.0,521.5714285714286
+after handoff to end of Part 1,Appliance1,4903,98.0,58,68,204.8,341.3333333333333
+after handoff to end of Part 1,Appliance2,4903,94.8,75,79,287.2,270.75
+after handoff to end of Part 1,Appliance3,4904,96.5,73,80,413.6,196.0
+after handoff to end of Part 1,Appliance4,4904,100.0,1,1,0.0,0.0
+after handoff to end of Part 1,Appliance5,3621,99.8,12,10,819.2,1024.0
+after handoff to end of Part 1,Appliance6,4904,100.0,1,1,0.0,0.0
+after handoff to end of Part 1,Appliance7,4903,100.0,1,1,0.0,0.0
+after handoff to end of Part 1,Appliance8,4904,99.9,5,6,9.3,9.714285714285714
+after handoff to end of Part 1,Appliance9,13,100.0,1,1,1.0,1.0

@@ -1,0 +1,11 @@
+house,wm_channel,readme_label,occupancy,selected,note
+2,Appliance2,"Washing Machine, LG, F1289TD",4.0,True,
+5,Appliance3,"Washing Machine, AEG, L99695HWD",4.0,True,Model AEG L99695HWD appears to be a washer-dryer; long ~2.2 kW periods suggest drying
+7,Appliance5,"Washing Machine, Bosch, Unknown",4.0,True,
+8,Appliance4,"Washing Machine, (no make/model given)",2.0,True,
+9,Appliance3,"Washing Machine, Bosch, Classixx 6 1200 Express",2.0,True,
+15,Appliance3,"Washing Machine, Beko, WMB91242LB",1.0,True,
+1,,,,False,Two laundry channels (Washer Dryer + Washing Machine); ambiguous which carries the main load
+4,,,,False,Two washing machines (Appliance4 and Appliance5)
+13,,,,False,Readme notes the washing machine 'Changes 25 Mar 2015'
+12,,,,False,No washing machine listed (several channels labelled '???')

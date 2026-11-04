@@ -1,0 +1,4 @@
+status,cycles,median_energy_kwh,heated_pct,median_duration_min,median_other_load_w,median_best_iou,median_overlapping_pred
+matched,337,0.625,100.0,68.0,918.682,0.871,1.0
+no overlap at all,13,0.202,61.538,47.0,478.574,0.0,0.0
+"overlapped, below match IoU",84,0.611,97.619,88.5,862.26,0.316,1.0

@@ -1,0 +1,11 @@
+Metric,Part1,Part2,Combined
+Total Rows,4377877.0,4140886.0,8518763.0
+Missing Values (NaN cells across all channels),0.0,5284083.0,5284083.0
+Duplicate Unix Timestamps (rows),1004404.0,14755.0,1019159.0
+Rows Removed: Unresolvable Repeated Local Hour,0.0,986.0,986.0
+"Gaps > 2 Minutes (120s), canonical UTC",592.0,122.0,714.0
+"Gaps > 15 Minutes (900s), canonical UTC",56.0,28.0,84.0
+"Gaps > 1 Hour (3600s), canonical UTC",13.0,19.0,32.0
+"Gaps > 24 Hours (86400s), canonical UTC",3.0,10.0,13.0
+"Gaps > 1 Hour (3600s), raw Unix as stored",14.0,19.0,33.0
+"Maximum Outage Duration (Hours), canonical UTC",998.45,207.57,998.45

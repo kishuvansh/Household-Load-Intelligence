@@ -1,0 +1,7 @@
+house,used,reason
+2,True,WM channel reliable and aligned with aggregate
+5,False,WM channel is probably a washer-dryer (model AEG L99695HWD; 5-9.5 h wash+dry periods). Training on it would teach the model that drying is washing.
+7,True,WM channel reliable and aligned with aggregate
+8,True,WM channel reliable and aligned with aggregate
+9,True,WM channel reliable and aligned with aggregate
+15,True,WM channel reliable and aligned with aggregate

@@ -1,0 +1,2 @@
+house,day,cycle_start_local,duration_min,energy_kwh,peak_w,day_aggregate_kwh,day_wm_kwh
+8,2014-03-23,2014-03-23 05:24:00+00:00,57,0.786,2311.0,18.37,0.8

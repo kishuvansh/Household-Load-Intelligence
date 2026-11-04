@@ -1,0 +1,6 @@
+Part,Date,Change,Rows_00_03_Local,Largest_Local_Step_From,Largest_Local_Step_To,Largest_Local_Step_s,Largest_Canonical_UTC_Step_s,Canonical_UTC_Backward_Steps,Ambiguous_Rows,Rows_Removed,Treatment
+1,2013-10-27,autumn (clock back),2399.0,2013-10-27 01:59:59,2013-10-27 01:00:01,-3598.0,15.0,0.0,1199.0,0.0,resolved by file order
+1,2014-03-30,spring (clock forward),1200.0,2014-03-30 00:59:58,2014-03-30 02:00:02,3604.0,13.0,0.0,0.0,0.0,local clock jumps forward; canonical UTC continuous (no outage)
+2,2014-10-26,autumn (clock back),2055.0,2014-10-26 00:04:56,2014-10-26 00:05:10,14.0,7205.0,0.0,986.0,986.0,unresolvable - rows removed
+2,2015-03-29,spring (clock forward),1079.0,2015-03-29 00:59:54,2015-03-29 02:00:01,3607.0,18.0,0.0,0.0,0.0,local clock jumps forward; canonical UTC continuous (no outage)
+1->2,2014-09-27,Part 1 to Part 2 handoff,,,,,,,,,"Part 1 rows with UTC <= 2014-09-27 13:51:12 UTC, Part 2 after (= 2014-09-27 14:51:12 UK clock)"

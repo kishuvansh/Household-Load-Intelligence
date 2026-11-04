@@ -1,0 +1,11 @@
+Channel,Appliance_Name,Minutes_Compared,Mean_Absolute_Diff_W,P95_Absolute_Diff_W,P99_Absolute_Diff_W,Max_Absolute_Diff_W
+Aggregate,Mains Whole-House,797473,9.72,50.329,210.167,3111.748
+Appliance1,Fridge,794859,0.147,0.15,3.352,460.65
+Appliance2,Freezer (1),794085,0.263,0.333,4.883,758.15
+Appliance3,Freezer (2),796088,0.223,0.2,6.1,496.25
+Appliance4,Washer Dryer,797103,0.063,0.0,0.0,834.583
+Appliance5,Washing Machine,787061,0.439,0.0,6.497,1218.333
+Appliance6,Dishwasher,797415,0.197,0.0,0.0,1348.35
+Appliance7,Computer,797535,0.034,0.1,0.867,176.25
+Appliance8,Television Site,795808,0.064,0.342,1.233,1314.133
+Appliance9,Electric Heater,701748,0.964,0.367,31.259,1088.4

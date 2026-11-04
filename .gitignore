@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches and temporary directories
+.ipynb_checkpoints/
+/tmp/mpl_cache/
+.DS_Store
+
+# Large raw datasets (must not be committed to Git repository)
+Data/REFIT_RAW_081116/
+Data/CLEAN_REFIT_081116/
+*.7z
+*.zip
+*.tar.gz
+
+# Note: Keep Data/processed/phase1/ for reproducibility of cleaned baseline
+
+
+# Phase 2 1-minute processed copies (~52 MB); regenerate with: python3 phase2/wm_eda.py
+Data/processed/phase2/
+
+# Phase 3 test-period predictions (~8 MB); regenerate with: python3 phase3/wm_nilm.py
+Data/processed/phase3/
+
+# Local Phase 1 backup made before the Phase 1 audit (not for the repository)
+.phase1_backup_*/
+
+# Assignment brief (not part of the submission)
+Flock_Energy - Data Science.pdf

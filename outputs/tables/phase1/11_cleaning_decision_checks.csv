@@ -1,0 +1,49 @@
+Area,Metric,Value,Note
+De-duplication,Part 1: rows used / unique UTC seconds,4328936 / 3334050,
+De-duplication,Part 1: seconds holding more than one row,820268,
+De-duplication,"Part 1: (second, channel) cells with a reading before / after merge",33338258 / 33338258,equal = no complementary reading lost
+De-duplication,Part 2: rows used / unique UTC seconds,3230675 / 3218521,
+De-duplication,Part 2: seconds holding more than one row,12154,
+De-duplication,"Part 2: (second, channel) cells with a reading before / after merge",28960673 / 28960673,equal = no complementary reading lost
+Hold limit,Aggregate: short gaps 60-900 s left partly unfilled (count; minutes not filled),1434; 4623.6,decided by the hold limit
+Hold limit,"Aggregate: gaps > 900 s, i.e. outages (count; hours missing)",75; 1959.8,missing under any short hold limit
+Part 2 telemetry,Aggregate: Part 2 rows without a reading (%); median / 99th pct gap between readings (s),4.2; 7 / 15,
+Hold limit,Appliance1: short gaps 120-900 s left partly unfilled (count; minutes not filled),1084; 4897.7,decided by the hold limit
+Hold limit,"Appliance1: gaps > 900 s, i.e. outages (count; hours missing)",100; 1968.2,missing under any short hold limit
+Part 2 telemetry,Appliance1: Part 2 rows without a reading (%); median / 99th pct gap between readings (s),9.6; 7 / 20,
+Hold limit,Appliance2: short gaps 120-900 s left partly unfilled (count; minutes not filled),1131; 5312.0,decided by the hold limit
+Hold limit,"Appliance2: gaps > 900 s, i.e. outages (count; hours missing)",119; 1973.1,missing under any short hold limit
+Part 2 telemetry,Appliance2: Part 2 rows without a reading (%); median / 99th pct gap between readings (s),10.4; 7 / 21,
+Hold limit,Appliance3: short gaps 120-900 s left partly unfilled (count; minutes not filled),606; 3834.0,decided by the hold limit
+Hold limit,"Appliance3: gaps > 900 s, i.e. outages (count; hours missing)",88; 1981.5,missing under any short hold limit
+Part 2 telemetry,Appliance3: Part 2 rows without a reading (%); median / 99th pct gap between readings (s),7.0; 7 / 16,
+Hold limit,Appliance4: short gaps 60-900 s left partly unfilled (count; minutes not filled),1489; 4786.8,decided by the hold limit
+Hold limit,"Appliance4: gaps > 900 s, i.e. outages (count; hours missing)",80; 1962.9,missing under any short hold limit
+Part 2 telemetry,Appliance4: Part 2 rows without a reading (%); median / 99th pct gap between readings (s),8.2; 7 / 20,
+Hold limit,Appliance5: short gaps 60-900 s left partly unfilled (count; minutes not filled),3973; 8947.8,decided by the hold limit
+Hold limit,"Appliance5: gaps > 900 s, i.e. outages (count; hours missing)",230; 2048.0,missing under any short hold limit
+Part 2 telemetry,Appliance5: Part 2 rows without a reading (%); median / 99th pct gap between readings (s),11.8; 7 / 21,
+Hold limit,Appliance6: short gaps 60-900 s left partly unfilled (count; minutes not filled),1439; 4680.4,decided by the hold limit
+Hold limit,"Appliance6: gaps > 900 s, i.e. outages (count; hours missing)",75; 1959.8,missing under any short hold limit
+Part 2 telemetry,Appliance6: Part 2 rows without a reading (%); median / 99th pct gap between readings (s),7.2; 7 / 17,
+Hold limit,Appliance7: short gaps 120-900 s left partly unfilled (count; minutes not filled),598; 3801.2,decided by the hold limit
+Hold limit,"Appliance7: gaps > 900 s, i.e. outages (count; hours missing)",75; 1958.5,missing under any short hold limit
+Part 2 telemetry,Appliance7: Part 2 rows without a reading (%); median / 99th pct gap between readings (s),5.2; 7 / 15,
+Hold limit,Appliance8: short gaps 120-900 s left partly unfilled (count; minutes not filled),872; 4497.2,decided by the hold limit
+Hold limit,"Appliance8: gaps > 900 s, i.e. outages (count; hours missing)",91; 1965.8,missing under any short hold limit
+Part 2 telemetry,Appliance8: Part 2 rows without a reading (%); median / 99th pct gap between readings (s),8.9; 7 / 20,
+Hold limit,Appliance9: short gaps 120-900 s left partly unfilled (count; minutes not filled),796; 4289.0,decided by the hold limit
+Hold limit,"Appliance9: gaps > 900 s, i.e. outages (count; hours missing)",335; 3535.4,missing under any short hold limit
+Part 2 telemetry,Appliance9: Part 2 rows without a reading (%); median / 99th pct gap between readings (s),31.0; 7 / 20,
+Glitch rule,"Aggregate: readings outside [0, 25000] W remaining after cleaning",0,
+Glitch rule,"Appliance1: readings outside [0, 4000] W remaining after cleaning",0,
+Glitch rule,"Appliance2: readings outside [0, 4000] W remaining after cleaning",0,
+Glitch rule,"Appliance3: readings outside [0, 4000] W remaining after cleaning",0,
+Glitch rule,"Appliance4: readings outside [0, 4000] W remaining after cleaning",0,
+Glitch rule,"Appliance5: readings outside [0, 4000] W remaining after cleaning",0,
+Glitch rule,"Appliance6: readings outside [0, 4000] W remaining after cleaning",0,
+Glitch rule,"Appliance7: readings outside [0, 4000] W remaining after cleaning",0,
+Glitch rule,"Appliance8: readings outside [0, 4000] W remaining after cleaning",0,
+Glitch rule,"Appliance9: readings outside [0, 4000] W remaining after cleaning",0,
+Coverage rule,Minutes with 0 < coverage < 30 s set to missing (Aggregate),717,
+Coverage rule,Minutes kept with 30-59 s coverage (Aggregate),1647,
