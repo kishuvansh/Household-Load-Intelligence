@@ -9,9 +9,13 @@ This is a summary. Full analysis and source tables:
 
 Every number below comes from `outputs/tables/`.
 
-> **Open issue:** the official REFIT files appear to use UK local time, not UTC, in Part 2's summer-time periods
-> (see [DATA.md §4](DATA.md#4-remaining-concerns)). Hour-of-day results below may be shifted by one hour in those
-> periods. Totals, durations, energies and model accuracy do not depend on the clock hour.
+> **Clock correction applied.** The official REFIT files use UK local time, not UTC, in their Part 2 summer periods
+> (see [DATA.md §4](DATA.md#4-remaining-concerns)). All results below use timestamps corrected to UTC. Compared with
+> the uncorrected run
+> ([`07_baseline_vs_corrected_metrics.csv`](outputs/tables/audit/07_baseline_vs_corrected_metrics.csv)):
+> - cycle counts, durations and energies are essentially unchanged (2,678 → 2,676 cycles);
+> - Phase 3 metrics change slightly (minute F1 0.556 → 0.577, cycle F1 0.533 → 0.536);
+> - Phase 4's peak-window share of washes rises from 12.8% to 14.3%.
 
 ## 1. Washing-machine EDA (Phase 2)
 
@@ -25,14 +29,14 @@ to **15 minutes** are joined into one activity period. A period counts as a **li
 
 **Key findings:**
 
-- **Cycles found:** 2,678 likely cycles; 2,472 of them are complete and used for duration and energy statistics.
+- **Cycles found:** 2,676 likely cycles; 2,472 of them are complete and used for duration and energy statistics.
 - **Frequency:** varies about 3×, from 3.5 cycles per week (Houses 9 and 15) to 10.9 (House 7).
 - **A typical cycle:** 0.29–0.79 kWh and 45–98 min (house medians). In every house, 90–100% of complete cycles
   include a ~2 kW water-heating block.
 - **Share of household use:** washing machines are 2.7–6.8% of household electricity, but they are a
   concentrated ~2 kW load that can be scheduled.
 - **Timing is household-specific:**
-  - House 8 starts 77% of its cycles between 00:00 and 07:00 (a timer or off-peak tariff).
+  - House 8 starts 80.5% of its cycles between 00:00 and 07:00 (a timer or off-peak tariff).
   - House 7 peaks at 07:00–08:00.
   - Houses 5 and 9 wash 2.6–3.5× more often per day at weekends.
 
@@ -84,15 +88,15 @@ spin phase.
 
 | Metric | LightGBM (±60 min) | LightGBM (causal, past 60 min) | Hour-of-day profile | Always off |
 |---|---|---|---|---|
-| RMSE (W) | **128.3** | 149.4 | 216.5 | 220.3 |
-| MAE (W) | **21.6** | 25.5 | 45.1 | 27.5 |
-| Minute F1 | **0.56** | 0.51 | 0.20 | 0.00 |
-| Energy error | −5.5% | −11.5% | −19.4% | −100% |
+| RMSE (W) | **126.0** | 146.1 | 215.9 | 220.3 |
+| MAE (W) | **20.8** | 24.5 | 44.7 | 27.5 |
+| Minute F1 | **0.58** | 0.52 | 0.23 | 0.00 |
+| Energy error | −5.9% | −11.5% | −19.2% | −100% |
 
 | Cycle detection (IoU ≥ 0.5, one-to-one) | Recall | Precision | F1 |
 |---|---|---|---|
-| Within-house (unseen time) | 77.6% (337/434) | 40.6% (337/831) | 0.53 |
-| Leave-one-house-out (unseen home) | 68.9% (299/434) | 28.1% (299/1063) | 0.40 |
+| Within-house (unseen time) | 77.6% (337/434) | 40.9% (337/823) | 0.54 |
+| Leave-one-house-out (unseen home) | 67.7% (294/434) | 28.2% (294/1043) | 0.40 |
 
 **Actual vs predicted (test data).** Most minutes sit at (0, 0). True heater minutes form a vertical band at
 about 2 kW: the model usually recognises them but under-predicts. The low-power tail is predicted near 0.
@@ -102,19 +106,22 @@ Points at "actual 0, predicted > 0" are false detections.
 
 **Interpretation.**
 
-- The model clearly beats both baselines on RMSE and F1. Always-off has a slightly lower MAE than the model in
-  Houses 2 and 9.
-- The good pooled energy error (−5.5%) is partly a coincidence. Each true cycle is under-estimated (48–75% of its
+- The model clearly beats both baselines on RMSE and F1. Always-off has a lower MAE than the model in House 2,
+  and nearly ties it in House 9.
+- The good pooled energy error (−5.9%) is partly a coincidence. Each true cycle is under-estimated (50–76% of its
   energy is assigned), and false detections fill the gap.
-- On unseen homes, energy errors reach +46% to +48% (Houses 8, 9) and −50% (House 15).
+- On unseen homes, energy errors reach +42% and +37% (Houses 8, 9) and −50% (House 15).
 
 **Failure cases** (chosen by rule; [phase3/RESULTS.md §7](phase3/RESULTS.md)):
 
-1. **A missed cycle.** The heater block sits inside a run of 1–6 kW loads (House 7).
-2. **False detections.** Other ~2 kW heating loads look like washing: dishwasher, kettle, tumble dryer, or a
-   steady overnight unmetered heater (House 2).
-3. **Mis-timing.** The predicted cycle stops when the heater stops, so long programmes and back-to-back loads get
-   poor start and end times.
+1. **A missed cycle.** A clear heater block just after midnight is predicted only as a brief spike, too short to
+   form a cycle (House 2).
+2. **False detections.** Other ~2 kW heating loads look like washing: dishwasher, kettle, tumble dryer, or large
+   unmetered loads (House 8, morning, with 4–14 kW of other load).
+3. **Mis-timing.** Two heater blocks that the cycle rule joins into one wash are predicted as separate cycles
+   (House 9). More generally, the predicted cycle stops when the heater stops, so long programmes and back-to-back
+   loads get poor start and end times.
+4. **Overlapping loads.** The heater is tracked, but energy leaks into a surrounding 4–6 kW period (House 8).
 
 Cold washes, with no heater block, and new homes without local training data are where the model will struggle
 most.

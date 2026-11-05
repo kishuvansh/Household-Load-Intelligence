@@ -4,6 +4,7 @@ numpy==2.3.2
 matplotlib==3.10.5
 pyarrow==23.0.0
 lightgbm==4.6.0
+scikit-learn==1.7.1   # required by lightgbm's LGBMRegressor interface used in Phase 3
 # notebooks (optional for the scripts, needed for ./run_all.sh --notebooks)
 jupyter
 nbconvert==7.17.0

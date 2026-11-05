@@ -21,6 +21,14 @@ utility summary is [Recommendation.md](../Recommendation.md) at the repository r
 >   change
 > - the window sits at 16:00–18:59 UTC under GMT and 15:00–17:59 UTC under BST
 
+> **Input timestamps are corrected first.** In the official files' Part 2 summer periods (from the evening of
+> 30 Sep 2014 to 26 Oct 2014, and from 29 Mar 2015), `Unix` is the UK local clock, not UTC. Phase 2's loader
+> corrects this before any analysis (Phase 2 [DATA.md §1](../phase2/DATA.md#1-source-files),
+> [`audit/official_timestamp_check.py`](../audit/official_timestamp_check.py)). Without the correction, 18.0% of
+> the full-record weekday window minutes would have been read one hour late, i.e. really 15:00–18:00
+> ([`02_corrected_share_by_phase.csv`](../outputs/tables/audit/02_corrected_share_by_phase.csv)). The before/after
+> changes are in [`07_baseline_vs_corrected_metrics.csv`](../outputs/tables/audit/07_baseline_vs_corrected_metrics.csv).
+
 ---
 
 ## 1. The opportunity: shift washing out of the evening peak
@@ -41,16 +49,17 @@ Source: [`02_peak_window_exposure.csv`](../outputs/tables/phase4/02_peak_window_
 
 | House | Weekday washes | Starting in window | % of weekday starts in window | % of weekday WM energy in window | Avg WM power in window | Avg WM power, other weekday hours | Est. WM kWh/year in window | WM share of whole-house window energy |
 |---|---|---|---|---|---|---|---|---|
-| 2 | 238 | 34 | 14.3% | 16.5% | 24.8 W | 17.9 W | 19.4 | 3.7% |
-| 7 | 589 | 85 | 14.4% | 13.3% | 37.9 W | 35.8 W | 29.7 | 3.7% |
-| 8 | 277 | 1 | 0.4% | 0.2% | 0.4 W | 37.8 W | 0.3 | 0.07% |
-| 9 | 117 | 36 | 30.8% | 24.8% | 20.8 W | 9.1 W | 16.3 | 2.6% |
-| 15 | 174 | 23 | 13.2% | 13.9% | 17.6 W | 15.9 W | 13.8 | 6.0% |
-| **Pooled** | **1,395** | **179** | **12.8%** | **11.1%** | **20.6 W** | **23.7 W** | **16.1** | **3.0%** |
+| 2 | 238 | 33 | 13.9% | 15.3% | 23.0 W | 18.2 W | 18.0 | 3.3% |
+| 7 | 589 | 103 | 17.5% | 14.8% | 42.1 W | 35.2 W | 33.0 | 4.1% |
+| 8 | 275 | 1 | 0.4% | 0.2% | 0.4 W | 37.7 W | 0.4 | 0.07% |
+| 9 | 118 | 39 | 33.1% | 26.9% | 22.6 W | 8.9 W | 17.7 | 2.6% |
+| 15 | 174 | 24 | 13.8% | 15.3% | 19.4 W | 15.6 W | 15.2 | 6.6% |
+| **Pooled** | **1,394** | **200** | **14.3%** | **11.9%** | **21.9 W** | **23.5 W** | **17.2** | **3.1%** |
 
 "Weekday washes" are likely wash cycles (Phase 2 rule) starting Monday–Friday. "Avg WM power in window" is the
 mean over all observed window minutes, whether or not the machine was running. The pooled value is total window
-WM energy ÷ total observed window hours, i.e. a per-household average.
+WM energy ÷ total observed window hours, i.e. a per-household average. The pooled **17.2 kWh/year is therefore per
+household**, not a total for the five homes.
 
 ![Peak-window exposure](../outputs/figures/phase4/01_peak_window_exposure.png)
 
@@ -61,16 +70,16 @@ WM energy ÷ total observed window hours, i.e. a per-household average.
 > - It is energy **exposed** to the window, **not** energy that would be shifted.
 
 **What this shows**
-- **These homes do not concentrate washing in the evening peak.** Pooled, 12.8% of weekday washes start in the
-  window, about the window's 12.5% share of weekday time.
-- **The homes differ a lot.** House 9 starts 30.8% of weekday washes in the window. House 8 starts almost none
-  (1 of 277), because it washes overnight.
-- **The per-household lever is small.** The machine adds on average **20.6 W** to a household's window demand,
-  against **0.686 kW** of whole-house demand (3.0%). Even in the most exposed home (House 7) it is about 38 W.
+- **Pooled, washing is only slightly concentrated in the evening peak.** 14.3% of weekday washes start in the
+  window, a little above the window's 12.5% share of weekday time. The excess comes from two homes.
+- **The homes differ a lot.** House 9 starts 33.1% of weekday washes in the window and House 7 17.5%. House 8
+  starts almost none (1 of 275), because it washes overnight.
+- **The per-household lever is small.** The machine adds on average **21.9 W** to a household's window demand,
+  against **0.713 kW** of whole-house demand (3.1%). Even in the most exposed home (House 7) it is about 42 W.
 - **Not all window energy can be moved by "start later".**
-  - Of 107.2 kWh of WM energy observed in the window, 91.9 kWh came from cycles that *started* in the window.
-  - 14.7 kWh came from cycles that started *before 16:00* and ran into it.
-  - Cycles that start in the window keep a median **94%** of their energy inside it, so a start would need to move
+  - Of 113.9 kWh of WM energy observed in the window, 100.7 kWh came from cycles that *started* in the window.
+  - 12.6 kWh came from cycles that started *before 16:00* and ran into it.
+  - Cycles that start in the window keep a median **93%** of their energy inside it, so a start would need to move
     well clear of the window, not just slightly, for the whole cycle to leave it.
 
 ### 1.3 Can the disaggregation model identify peak-window washing?
@@ -85,32 +94,38 @@ The headline uses **one-to-one matching at IoU ≥ 0.5**.
 
 Source: [`05_model_vs_actual_window_starts.csv`](../outputs/tables/phase4/05_model_vs_actual_window_starts.csv)
 
-| House | Actual: window starts / weekday cycles | Actual % | Within-house predicted % (error) | Within: actual window washes matched | Within: predicted window starts that are real | LOHO predicted % (error) | LOHO: actual matched | LOHO: predicted real |
+| House | Actual: window starts / weekday cycles | Actual % | Within-house predicted % (error) | Within: actual window-start washes matched to a predicted cycle | Within: predicted window-start cycles matched to a true cycle | LOHO predicted % (error) | LOHO: actual matched | LOHO: predicted matched |
 |---|---|---|---|---|---|---|---|---|
-| 2 | 5 / 48 | 10.4% | 26.7% (+16.3 pp) | 0 of 5 | 0 of 31 | 30.4% (+19.9 pp) | 1 of 5 | 1 of 34 |
-| 7 | 17 / 142 | 12.0% | 17.9% (+5.9 pp) | 12 of 17 | 11 of 36 | 18.0% (+6.0 pp) | 9 of 17 | 9 of 43 |
-| 8 | 0 / 62 | 0.0% | 7.4% (+7.4 pp) | — (none to find) | 0 of 10 | 5.7% (+5.7 pp) | — | 0 of 12 |
-| 9 | 4 / 22 | 18.2% | 17.2% (−0.9 pp) | 2 of 4 | 2 of 15 | 15.3% (−2.9 pp) | 3 of 4 | 3 of 21 |
-| 15 | 3 / 36 | 8.3% | 9.1% (+0.8 pp) | 3 of 3 | 2 of 3 | 9.4% (+1.0 pp) | 0 of 3 | 0 of 3 |
-| **Pooled** | **29 / 310** | **9.4%** | **16.6% (+7.2 pp)** | **17 of 29 (58.6%)** | **15 of 95 (15.8%)** | **15.4% (+6.1 pp)** | **13 of 29 (44.8%)** | **13 of 113 (11.5%)** |
+| 2 | 4 / 48 | 8.3% | 28.2% (+19.9 pp) | 0 of 4 | 0 of 33 | 28.6% (+20.2 pp) | 0 of 4 | 0 of 30 |
+| 7 | 30 / 142 | 21.1% | 23.6% (+2.5 pp) | 19 of 30 | 18 of 48 | 21.9% (+0.8 pp) | 18 of 30 | 16 of 53 |
+| 8 | 0 / 62 | 0.0% | 6.7% (+6.7 pp) | — (none to find) | 0 of 9 | 6.3% (+6.3 pp) | — | 0 of 13 |
+| 9 | 6 / 23 | 26.1% | 34.5% (+8.4 pp) | 2 of 6 | 2 of 29 | 26.5% (+0.4 pp) | 4 of 6 | 4 of 36 |
+| 15 | 4 / 36 | 11.1% | 9.1% (−2.0 pp) | 3 of 4 | 3 of 3 | 9.1% (−2.0 pp) | 0 of 4 | 0 of 3 |
+| **Pooled** | **44 / 311** | **14.1%** | **21.4% (+7.2 pp)** | **24 of 44 (54.5%)** | **23 of 122 (18.9%)** | **18.7% (+4.5 pp)** | **22 of 44 (50.0%)** | **20 of 135 (14.8%)** |
 
-"pp" means percentage points. The mean absolute per-house error in the window share is 6.3 pp within-house and
-7.1 pp LOHO. "Matched" and "real" counts can differ slightly, because a matched pair can straddle 16:00 (for
-example, a true start at 16:05 matched to a predicted start at 15:55).
+"pp" means percentage points. The mean absolute per-house error in the window share is 7.9 pp within-house and
+5.9 pp LOHO.
+
+**What "matched" means here.** These are **overlap-based matched-cycle counts**, not start-time classification
+precision and recall. A cycle counts as matched if Phase 3's one-to-one matching pairs it with a cycle in the other
+series at IoU ≥ 0.5. The matched partner's start does not have to fall in the window: a true start at 16:05 can be
+matched to a predicted start at 15:55. That is also why the two "matched" counts can differ.
 
 *Sensitivity only (not a headline):* with the looser one-to-one "any overlap" criterion, pooled window recall is
-86.2% and precision 25.3% within-house, and 89.7% and 22.1% LOHO. This shows that many washes are *touched* by a
+93.2% and precision 30.3% within-house, and 81.8% and 23.7% LOHO. This shows that many washes are *touched* by a
 prediction even when the timing is poor. It does not mean those washes are reliably detected.
 
 ![Model vs actual window starts](../outputs/figures/phase4/02_model_vs_actual_window_starts.png)
 
 **What this shows**
-- **The model over-states peak-window washing**: 16.6% vs 9.4% pooled, and House 2 by +16.3 pp.
-- **Strict matching:** it recovers only about half of the real window-start washes. Most of its predicted
-  window starts (84.2% within-house, 88.5% LOHO) are not real washes. These are false detections from dishwashers,
-  kettles and similar loads (Phase 3) that happen to fall in the evening.
-- It does rank House 8 (the overnight washer) lowest, and it is close for Houses 9 and 15.
-- **The test periods contain only 29 actual window-start washes in total** (0–17 per house), so every per-house
+- **The model over-states peak-window washing**: 21.4% vs 14.1% pooled, and House 2 by +19.9 pp.
+- **Strict matching:** it matches only about half of the real window-start washes. Most of its predicted
+  window-start cycles have no true wash at IoU ≥ 0.5 (81.1% within-house, 85.2% LOHO). Some of these are real washes
+  with poor timing. Even under the loose "any overlap" sensitivity, 69.7% (within-house) and 76.3% (LOHO) touch no
+  washing at all. Across all test periods, Phase 3 links false detections like these mainly to dishwashers, kettles,
+  tumble dryers and unmetered loads; they were not attributed separately for the window.
+- It does rank House 8 (the overnight washer) lowest, and it is within about 2.5 pp for Houses 7 and 15.
+- **The test periods contain only 44 actual window-start washes in total** (0–30 per house), so every per-house
   figure above is very uncertain.
 - **Conclusion:** the model is **not reliable enough to target individual households or to measure a programme's
   effect**. At most it could give a rough first screen that needs confirming with the customer or with direct
@@ -132,13 +147,13 @@ prediction even when the timing is poor. It does not mean those washes are relia
 
 **Illustrative sample size** ([`08_illustrative_sample_size.csv`](../outputs/tables/phase4/08_illustrative_sample_size.csv)).
 This is a simple two-arm comparison of household means (5% two-sided significance, 80% power). The
-between-household SD of average window kW is 0.261 kW, taken from **only five REFIT homes**:
+between-household SD of average window kW is 0.277 kW, taken from **only five REFIT homes**:
 
 | Assumed reduction in average window kW | Households per arm |
 |---|---|
-| 21 W: *all* of the pooled WM window power removed (a ceiling) | 2,517 |
-| 10 W (half) | 10,068 |
-| 5 W (a quarter) | 40,271 |
+| 22 W: *all* of the pooled WM window power removed (a ceiling) | 2,514 |
+| 11 W (half) | 10,053 |
+| 5.5 W (a quarter) | 40,212 |
 
 This is illustrative only, but the message is robust. **A washing-machine-only peak-shifting effect is small next
 to normal differences between homes.** A pilot would need thousands of households per arm unless it:
@@ -177,8 +192,8 @@ The same randomised design would apply, with whole-day kWh as the outcome.
 - Seasonal coverage is uneven, which limits annual estimates (§1.2 above).
 
 ### 2.3 Household differences (evidence)
-- Window exposure ranges from 0.4% to 30.8% of weekday starts (§1.2).
-- On an unseen house, cycle F1 is 0.40 vs 0.53 within-house, and energy errors reach ±50% (Phase 3 §6).
+- Window exposure ranges from 0.4% to 33.1% of weekday starts (§1.2).
+- On an unseen house, cycle F1 is 0.40 vs 0.54 within-house, and energy errors reach about ±50% (Phase 3 §6).
 - A model trained on some homes does not transfer reliably to others.
 
 ### 2.4 Applying UK results to India
@@ -221,8 +236,8 @@ interval-to-interval changes in the *other* load when the machine is off.
 
 | Resolution | Median heater signal | Median signal ÷ background SD | Cycles with ratio ≥ 2 | WM-off intervals where other load changes ≥ median heater signal (by house) |
 |---|---|---|---|---|
-| 1 min | 2,118 W | 7.42 | 100% | 0.1–0.8% |
-| 15 min | 1,546 W | 3.02 | 83.5% | 0.02–4.5% |
+| 1 min | 2,118 W | 7.41 | 100% | 0.1–0.8% |
+| 15 min | 1,546 W | 3.01 | 83.5% | 0.02–4.5% |
 | 30 min | 923 W | 1.87 | 40.8% | 0.2–9.2% |
 
 ![Resolution information loss](../outputs/figures/phase4/03_resolution_information_loss.png)

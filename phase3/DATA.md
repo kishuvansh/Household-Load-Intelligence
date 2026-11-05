@@ -14,7 +14,7 @@ disaggregation model, and why. All numbers come from [`wm_nilm.py`](wm_nilm.py) 
 | Input (X) | Whole-house **aggregate** active power, 1-minute mean (W) |
 | Target (y) | **Washing-machine** sub-meter active power, 1-minute mean (W) |
 | Preparation | Phase 2's rules, reused read-only from `phase2/wm_eda.py`: sort, drop duplicate timestamps, mask frozen readings (an identical value held for more than 60 min), 1-minute arithmetic means, no gap filling. Phase 2 outputs are read if present, otherwise rebuilt in memory. Nothing in Phase 2 is written |
-| Time zone | Data are in UTC. Hour-of-day features use Europe/London local time |
+| Time zone | The official timestamps are first corrected to UTC by Phase 2's loader: in each file's Part 2 summer periods they are the UK local clock (Phase 2 [DATA.md §1](../phase2/DATA.md#1-source-files), [`../audit/official_timestamp_check.py`](../audit/official_timestamp_check.py)). Hour-of-day features use Europe/London local time. The other sub-meters used to explain false detections get the same correction |
 
 > **Assumption:** the 1-minute mean of a sub-meter is the "true" washing-machine power. Sub-meters and the
 > aggregate clamp are not synchronised (6–8 s polling), so small timing offsets exist between the two at 1-minute scale.
@@ -84,11 +84,11 @@ points to a study-wide logging fault.
 
 | House | Record (UTC) | Days with both channels | Unreliable days excluded | Minutes on those days | Inconsistent minutes | **Usable days** | **Active minutes (> 20 W)** |
 |---|---|---|---|---|---|---|---|
-| 2 | 2013-09-17 → 2015-05-28 | 460.9 | 13 | 11,442 | 53 | **452.9** | 4.69% |
-| 7 | 2013-11-01 → 2015-07-08 | 532.6 | 11 | 10,427 | 503 | **525.1** | 8.33% |
-| 8 | 2013-11-01 → 2015-05-10 | 492.6 | 23 | 24,049 | 36 | **475.8** | 3.36% |
-| 9 | 2013-12-17 → 2015-07-08 | 454.0 | 36 | 12,802 | 25 | **445.1** | 2.83% |
-| 15 | 2013-12-17 → 2015-07-08 | 485.1 | 8 | 4,630 | 158 | **481.8** | 2.87% |
+| 2 | 2013-09-17 → 2015-05-28 | 460.8 | 13 | 11,442 | 53 | **452.8** | 4.69% |
+| 7 | 2013-11-01 → 2015-07-08 | 532.6 | 11 | 10,487 | 503 | **524.9** | 8.33% |
+| 8 | 2013-11-01 → 2015-05-10 | 492.5 | 26 | 28,203 | 36 | **472.9** | 3.36% |
+| 9 | 2013-12-17 → 2015-07-08 | 453.9 | 36 | 12,802 | 25 | **445.0** | 2.83% |
+| 15 | 2013-12-17 → 2015-07-08 | 485.0 | 8 | 4,630 | 158 | **481.7** | 2.87% |
 
 **Class balance.** The washing machine is active in only **2.8–8.3%** of usable minutes. As a result:
 - an "always off" prediction is correct about 92–97% of the time and has a deceptively low MAE
@@ -108,11 +108,11 @@ feature window spans two splits.
 
 | House | Train (UTC) | Days | Active | Validation (UTC) | Days | Active | Test (UTC) | Days | Active |
 |---|---|---|---|---|---|---|---|---|---|
-| 2 | 2013-09-17 → 2014-10-27 | 271.7 | 4.67% | 2014-10-28 → 2015-02-09 | 90.0 | 4.64% | 2015-02-10 → 2015-05-28 | 89.6 | 4.73% |
-| 7 | 2013-11-01 → 2014-11-08 | 315.0 | 7.93% | 2014-11-09 → 2015-02-22 | 104.0 | 7.91% | 2015-02-23 → 2015-07-08 | 104.0 | 9.78% |
-| 8 | 2013-11-01 → 2014-10-12 | 285.5 | 3.32% | 2014-10-13 → 2015-01-25 | 94.2 | 3.27% | 2015-01-26 → 2015-05-10 | 94.2 | 3.66% |
+| 2 | 2013-09-17 → 2014-10-27 | 271.7 | 4.67% | 2014-10-28 → 2015-02-09 | 90.0 | 4.63% | 2015-02-10 → 2015-05-28 | 89.6 | 4.73% |
+| 7 | 2013-11-01 → 2014-11-08 | 315.0 | 7.93% | 2014-11-09 → 2015-02-22 | 104.0 | 7.90% | 2015-02-23 → 2015-07-08 | 104.0 | 9.78% |
+| 8 | 2013-11-01 → 2014-10-11 | 283.7 | 3.34% | 2014-10-12 → 2015-01-25 | 93.6 | 3.15% | 2015-01-26 → 2015-05-10 | 93.6 | 3.69% |
 | 9 | 2013-12-17 → 2014-12-17 | 267.0 | 2.68% | 2014-12-18 → 2015-03-17 | 88.0 | 3.05% | 2015-03-18 → 2015-07-08 | 88.0 | 3.15% |
-| 15 | 2013-12-17 → 2014-11-26 | 289.1 | 2.83% | 2014-11-27 → 2015-03-09 | 95.4 | 2.83% | 2015-03-10 → 2015-07-08 | 95.4 | 3.10% |
+| 15 | 2013-12-17 → 2014-11-26 | 289.0 | 2.83% | 2014-11-27 → 2015-03-09 | 95.3 | 2.83% | 2015-03-10 → 2015-07-08 | 95.4 | 3.09% |
 
 Figure: [`01_split_timeline.png`](../outputs/figures/phase3/01_split_timeline.png).
 
@@ -142,7 +142,7 @@ Figure: [`01_split_timeline.png`](../outputs/figures/phase3/01_split_timeline.pn
 > minutes are 1.6–4.7% of valid minutes in the selected houses (Phase 2 DATA.md §5).
 
 > **Limitation:** some aggregates contain very large loads that no sub-meter records. In usable minutes,
-> Houses 2 and 8 exceed 10 kW for 3,600 and 2,190 minutes respectively, with a 1-minute maximum of 23.8 kW in
+> Houses 2 and 8 exceed 10 kW for 3,600 and 2,181 minutes respectively, with a 1-minute maximum of 23.8 kW in
 > House 8. These are probably electric showers or storage/immersion heating. They are kept as genuine input,
 > because they are the kind of load a deployed model would face.
 

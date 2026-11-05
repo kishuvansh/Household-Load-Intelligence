@@ -76,11 +76,14 @@ The pipeline writes nothing unless all 37 validation assertions pass.
 
 ## 4. Remaining concerns
 
-- **Official-file timestamps.** Phase 1 found that the official cleaned files appear to store **UK local time in
-  Part 2's summer-time periods**. They show an empty 01:00 UTC hour on 29 Mar 2015 in all 7 files checked and a
-  doubled 01:00 UTC hour on 26 Oct 2014 in 6 of the 7 ([phase1/RESULTS.md §2](phase1/RESULTS.md),
-  `outputs/tables/phase1/15_official_clean_dst_signatures.csv`). Phases 2–4 treat the official `Unix` column as
-  UTC, so hour-of-day results in those periods may be shifted by one hour. **This is not yet corrected.**
+- **Official-file timestamps: corrected.** The official cleaned files store **UK local time, not UTC, in their
+  Part 2 summer periods** (from each file's switch to raw Part 2 on 30 Sep 2014 to 26 Oct 2014, and from 29 Mar 2015).
+  - Confirmed for every Phase 2–4 house (`audit/official_timestamp_check.py`, `outputs/tables/audit/`).
+  - Phase 2's loader converts those rows to UTC before any analysis ([phase2/DATA.md §1](phase2/DATA.md)). It drops
+    the interleaved repeated hour of 26 Oct 2014, leaving a 2-hour gap, and the duplicated switch hour.
+  - The fix re-times 18.6% of Phase 2 cycles, 66.3% of Phase 3 test minutes and 18.0% of Phase 4 window minutes.
+  - **Residual:** the official Part 1 conversion leaves a 1-hour artefact at the 2013–14 clock changes (for example
+    an empty 00:00 UTC hour on 30 Mar 2014). These cannot be separated and are left as they are.
 - **House 1 logger clocks.** The two House 1 logger clocks drift apart by up to 7 minutes in summer 2014. There is
   no reference clock to correct this.
 - **Hidden short dropouts.** The official release forward-fills gaps, so short dropouts are hidden. Only frozen

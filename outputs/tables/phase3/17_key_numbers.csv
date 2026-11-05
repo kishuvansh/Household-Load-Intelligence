@@ -5,80 +5,80 @@ loho_tau_W__held_out_house_7,50.0
 loho_tau_W__held_out_house_8,50.0
 loho_tau_W__held_out_house_9,50.0
 loho_tau_W__held_out_house_15,50.0
-pooled_test_MAE_W__LightGBM (centered ±60 min),21.629
-pooled_test_RMSE_W__LightGBM (centered ±60 min),128.287
-pooled_test_F1__LightGBM (centered ±60 min),0.556
-pooled_test_energy_error_pct__LightGBM (centered ±60 min),-5.517
-"pooled_test_MAE_W__LightGBM (causal, past 60 min)",25.496
-"pooled_test_RMSE_W__LightGBM (causal, past 60 min)",149.401
-"pooled_test_F1__LightGBM (causal, past 60 min)",0.505
-"pooled_test_energy_error_pct__LightGBM (causal, past 60 min)",-11.495
-pooled_test_MAE_W__Hour-of-day profile,45.104
-pooled_test_RMSE_W__Hour-of-day profile,216.523
-pooled_test_F1__Hour-of-day profile,0.202
-pooled_test_energy_error_pct__Hour-of-day profile,-19.41
-pooled_test_MAE_W__Always off,27.492
-pooled_test_RMSE_W__Always off,220.25
+pooled_test_MAE_W__LightGBM (centered ±60 min),20.756
+pooled_test_RMSE_W__LightGBM (centered ±60 min),126.021
+pooled_test_F1__LightGBM (centered ±60 min),0.577
+pooled_test_energy_error_pct__LightGBM (centered ±60 min),-5.896
+"pooled_test_MAE_W__LightGBM (causal, past 60 min)",24.538
+"pooled_test_RMSE_W__LightGBM (causal, past 60 min)",146.11
+"pooled_test_F1__LightGBM (causal, past 60 min)",0.524
+"pooled_test_energy_error_pct__LightGBM (causal, past 60 min)",-11.469
+pooled_test_MAE_W__Hour-of-day profile,44.717
+pooled_test_RMSE_W__Hour-of-day profile,215.943
+pooled_test_F1__Hour-of-day profile,0.23
+pooled_test_energy_error_pct__Hour-of-day profile,-19.2
+pooled_test_MAE_W__Always off,27.512
+pooled_test_RMSE_W__Always off,220.324
 pooled_test_F1__Always off,0.0
 pooled_test_energy_error_pct__Always off,-100.0
-loho_pooled_energy_error_pct,4.673
+loho_pooled_energy_error_pct,0.431
 cycles_pooled_matched__within-house__one-to-one IoU>=0.5,337.0
 cycles_pooled_true__within-house__one-to-one IoU>=0.5,434.0
-cycles_pooled_pred__within-house__one-to-one IoU>=0.5,831.0
-cycles_pooled_precision__within-house__one-to-one IoU>=0.5,0.406
+cycles_pooled_pred__within-house__one-to-one IoU>=0.5,823.0
+cycles_pooled_precision__within-house__one-to-one IoU>=0.5,0.409
 cycles_pooled_recall__within-house__one-to-one IoU>=0.5,0.776
-cycles_pooled_F1__within-house__one-to-one IoU>=0.5,0.533
-cycles_pooled_matched__leave-one-house-out__one-to-one IoU>=0.5,299.0
+cycles_pooled_F1__within-house__one-to-one IoU>=0.5,0.536
+cycles_pooled_matched__leave-one-house-out__one-to-one IoU>=0.5,294.0
 cycles_pooled_true__leave-one-house-out__one-to-one IoU>=0.5,434.0
-cycles_pooled_pred__leave-one-house-out__one-to-one IoU>=0.5,1063.0
-cycles_pooled_precision__leave-one-house-out__one-to-one IoU>=0.5,0.281
-cycles_pooled_recall__leave-one-house-out__one-to-one IoU>=0.5,0.689
-cycles_pooled_F1__leave-one-house-out__one-to-one IoU>=0.5,0.399
-cycles_pooled_matched__within-house causal__one-to-one IoU>=0.5,320.0
+cycles_pooled_pred__leave-one-house-out__one-to-one IoU>=0.5,1043.0
+cycles_pooled_precision__leave-one-house-out__one-to-one IoU>=0.5,0.282
+cycles_pooled_recall__leave-one-house-out__one-to-one IoU>=0.5,0.677
+cycles_pooled_F1__leave-one-house-out__one-to-one IoU>=0.5,0.398
+cycles_pooled_matched__within-house causal__one-to-one IoU>=0.5,332.0
 cycles_pooled_true__within-house causal__one-to-one IoU>=0.5,434.0
-cycles_pooled_pred__within-house causal__one-to-one IoU>=0.5,916.0
-cycles_pooled_precision__within-house causal__one-to-one IoU>=0.5,0.349
-cycles_pooled_recall__within-house causal__one-to-one IoU>=0.5,0.737
-cycles_pooled_F1__within-house causal__one-to-one IoU>=0.5,0.474
+cycles_pooled_pred__within-house causal__one-to-one IoU>=0.5,913.0
+cycles_pooled_precision__within-house causal__one-to-one IoU>=0.5,0.364
+cycles_pooled_recall__within-house causal__one-to-one IoU>=0.5,0.765
+cycles_pooled_F1__within-house causal__one-to-one IoU>=0.5,0.493
 cycles_pooled_matched__within-house hour profile__one-to-one IoU>=0.5,0.0
 cycles_pooled_true__within-house hour profile__one-to-one IoU>=0.5,434.0
 cycles_pooled_pred__within-house hour profile__one-to-one IoU>=0.5,0.0
 cycles_pooled_precision__within-house hour profile__one-to-one IoU>=0.5,
 cycles_pooled_recall__within-house hour profile__one-to-one IoU>=0.5,0.0
 cycles_pooled_F1__within-house hour profile__one-to-one IoU>=0.5,0.0
-cycles_pooled_matched__within-house__one-to-one any overlap,412.0
+cycles_pooled_matched__within-house__one-to-one any overlap,414.0
 cycles_pooled_true__within-house__one-to-one any overlap,434.0
-cycles_pooled_pred__within-house__one-to-one any overlap,831.0
-cycles_pooled_precision__within-house__one-to-one any overlap,0.496
-cycles_pooled_recall__within-house__one-to-one any overlap,0.949
-cycles_pooled_F1__within-house__one-to-one any overlap,0.651
-cycles_pooled_matched__leave-one-house-out__one-to-one any overlap,399.0
+cycles_pooled_pred__within-house__one-to-one any overlap,823.0
+cycles_pooled_precision__within-house__one-to-one any overlap,0.503
+cycles_pooled_recall__within-house__one-to-one any overlap,0.954
+cycles_pooled_F1__within-house__one-to-one any overlap,0.659
+cycles_pooled_matched__leave-one-house-out__one-to-one any overlap,390.0
 cycles_pooled_true__leave-one-house-out__one-to-one any overlap,434.0
-cycles_pooled_pred__leave-one-house-out__one-to-one any overlap,1063.0
-cycles_pooled_precision__leave-one-house-out__one-to-one any overlap,0.375
-cycles_pooled_recall__leave-one-house-out__one-to-one any overlap,0.919
-cycles_pooled_F1__leave-one-house-out__one-to-one any overlap,0.533
-cycles_pooled_matched__within-house causal__one-to-one any overlap,407.0
+cycles_pooled_pred__leave-one-house-out__one-to-one any overlap,1043.0
+cycles_pooled_precision__leave-one-house-out__one-to-one any overlap,0.374
+cycles_pooled_recall__leave-one-house-out__one-to-one any overlap,0.899
+cycles_pooled_F1__leave-one-house-out__one-to-one any overlap,0.528
+cycles_pooled_matched__within-house causal__one-to-one any overlap,408.0
 cycles_pooled_true__within-house causal__one-to-one any overlap,434.0
-cycles_pooled_pred__within-house causal__one-to-one any overlap,916.0
-cycles_pooled_precision__within-house causal__one-to-one any overlap,0.444
-cycles_pooled_recall__within-house causal__one-to-one any overlap,0.938
-cycles_pooled_F1__within-house causal__one-to-one any overlap,0.603
+cycles_pooled_pred__within-house causal__one-to-one any overlap,913.0
+cycles_pooled_precision__within-house causal__one-to-one any overlap,0.447
+cycles_pooled_recall__within-house causal__one-to-one any overlap,0.94
+cycles_pooled_F1__within-house causal__one-to-one any overlap,0.606
 cycles_pooled_matched__within-house hour profile__one-to-one any overlap,0.0
 cycles_pooled_true__within-house hour profile__one-to-one any overlap,434.0
 cycles_pooled_pred__within-house hour profile__one-to-one any overlap,0.0
 cycles_pooled_precision__within-house hour profile__one-to-one any overlap,
 cycles_pooled_recall__within-house hour profile__one-to-one any overlap,0.0
 cycles_pooled_F1__within-house hour profile__one-to-one any overlap,0.0
-pure_false_detections_attributed__Dishwasher,132.0
-pure_false_detections_attributed__unmetered or unclear,111.0
-pure_false_detections_attributed__Kettle,55.0
-pure_false_detections_attributed__Tumble Dryer,55.0
-pure_false_detections_attributed__Washer Dryer,19.0
-pure_false_detections_attributed__Microwave,16.0
-pure_false_detections_attributed__Television Site,3.0
-pure_false_detections_attributed__Fridge-Freezer,2.0
-pure_false_detections_attributed__Freezer(1),2.0
+pure_false_detections_attributed__Dishwasher,128.0
+pure_false_detections_attributed__unmetered or unclear,112.0
+pure_false_detections_attributed__Tumble Dryer,54.0
+pure_false_detections_attributed__Kettle,50.0
+pure_false_detections_attributed__Washer Dryer,16.0
+pure_false_detections_attributed__Microwave,15.0
+pure_false_detections_attributed__Television Site,5.0
+pure_false_detections_attributed__Fridge-Freezer,3.0
 pure_false_detections_attributed__Toaster,2.0
-pure_false_detections_total,397.0
+pure_false_detections_attributed__Freezer(1),1.0
+pure_false_detections_total,386.0
 missed_cycles_total,97.0

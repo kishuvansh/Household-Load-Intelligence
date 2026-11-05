@@ -1,0 +1,250 @@
+Phase,Metric,Before,After,Change
+2,houses_analysed,6.0,6.0,0.0
+2,total_activity_periods,3404.0,3403.0,-1.0
+2,total_likely_cycles,2678.0,2676.0,-2.0
+2,total_complete_cycles,2472.0,2472.0,0.0
+2,availability_pct_min,75.38,75.37,-0.009999999999990905
+2,availability_pct_max,89.73,89.72,-0.010000000000005116
+2,cycles_per_week_min,3.52,3.52,0.0
+2,cycles_per_week_max,10.88,10.88,0.0
+2,median_cycle_kwh_min,0.293,0.293,0.0
+2,median_cycle_kwh_max,0.786,0.786,0.0
+2,median_duration_min_min,45.0,45.0,0.0
+2,median_duration_min_max,98.0,98.0,0.0
+2,wm_share_of_aggregate_pct_min,2.71,2.71,0.0
+2,wm_share_of_aggregate_pct_max,6.79,6.79,0.0
+2,peak_start_hour_house_2,9.0,8.0,-1.0
+2,peak_start_hour_house_5,10.0,10.0,0.0
+2,peak_start_hour_house_7,7.0,7.0,0.0
+2,peak_start_hour_house_8,6.0,6.0,0.0
+2,peak_start_hour_house_9,17.0,17.0,0.0
+2,peak_start_hour_house_15,11.0,11.0,0.0
+2,weekend_to_weekday_cycle_rate_ratio_house_2,0.82,0.82,0.0
+2,weekend_to_weekday_cycle_rate_ratio_house_5,3.51,3.49,-0.019999999999999574
+2,weekend_to_weekday_cycle_rate_ratio_house_7,0.99,0.99,0.0
+2,weekend_to_weekday_cycle_rate_ratio_house_8,0.73,0.73,0.0
+2,weekend_to_weekday_cycle_rate_ratio_house_9,2.63,2.59,-0.040000000000000036
+2,weekend_to_weekday_cycle_rate_ratio_house_15,1.03,1.03,0.0
+3,cycles_pooled_F1__leave-one-house-out__one-to-one IoU>=0.5,0.399,0.398,-0.0010000000000000009
+3,cycles_pooled_F1__leave-one-house-out__one-to-one any overlap,0.533,0.528,-0.0050000000000000044
+3,cycles_pooled_F1__within-house causal__one-to-one IoU>=0.5,0.474,0.493,0.019000000000000017
+3,cycles_pooled_F1__within-house causal__one-to-one any overlap,0.603,0.606,0.0030000000000000027
+3,cycles_pooled_F1__within-house hour profile__one-to-one IoU>=0.5,0.0,0.0,0.0
+3,cycles_pooled_F1__within-house hour profile__one-to-one any overlap,0.0,0.0,0.0
+3,cycles_pooled_F1__within-house__one-to-one IoU>=0.5,0.533,0.536,0.0030000000000000027
+3,cycles_pooled_F1__within-house__one-to-one any overlap,0.651,0.659,0.008000000000000007
+3,cycles_pooled_matched__leave-one-house-out__one-to-one IoU>=0.5,299.0,294.0,-5.0
+3,cycles_pooled_matched__leave-one-house-out__one-to-one any overlap,399.0,390.0,-9.0
+3,cycles_pooled_matched__within-house causal__one-to-one IoU>=0.5,320.0,332.0,12.0
+3,cycles_pooled_matched__within-house causal__one-to-one any overlap,407.0,408.0,1.0
+3,cycles_pooled_matched__within-house hour profile__one-to-one IoU>=0.5,0.0,0.0,0.0
+3,cycles_pooled_matched__within-house hour profile__one-to-one any overlap,0.0,0.0,0.0
+3,cycles_pooled_matched__within-house__one-to-one IoU>=0.5,337.0,337.0,0.0
+3,cycles_pooled_matched__within-house__one-to-one any overlap,412.0,414.0,2.0
+3,cycles_pooled_precision__leave-one-house-out__one-to-one IoU>=0.5,0.281,0.282,0.0009999999999999454
+3,cycles_pooled_precision__leave-one-house-out__one-to-one any overlap,0.375,0.374,-0.0010000000000000009
+3,cycles_pooled_precision__within-house causal__one-to-one IoU>=0.5,0.349,0.364,0.015000000000000013
+3,cycles_pooled_precision__within-house causal__one-to-one any overlap,0.444,0.447,0.0030000000000000027
+3,cycles_pooled_precision__within-house hour profile__one-to-one IoU>=0.5,,,
+3,cycles_pooled_precision__within-house hour profile__one-to-one any overlap,,,
+3,cycles_pooled_precision__within-house__one-to-one IoU>=0.5,0.406,0.409,0.002999999999999947
+3,cycles_pooled_precision__within-house__one-to-one any overlap,0.496,0.503,0.007000000000000006
+3,cycles_pooled_pred__leave-one-house-out__one-to-one IoU>=0.5,1063.0,1043.0,-20.0
+3,cycles_pooled_pred__leave-one-house-out__one-to-one any overlap,1063.0,1043.0,-20.0
+3,cycles_pooled_pred__within-house causal__one-to-one IoU>=0.5,916.0,913.0,-3.0
+3,cycles_pooled_pred__within-house causal__one-to-one any overlap,916.0,913.0,-3.0
+3,cycles_pooled_pred__within-house hour profile__one-to-one IoU>=0.5,0.0,0.0,0.0
+3,cycles_pooled_pred__within-house hour profile__one-to-one any overlap,0.0,0.0,0.0
+3,cycles_pooled_pred__within-house__one-to-one IoU>=0.5,831.0,823.0,-8.0
+3,cycles_pooled_pred__within-house__one-to-one any overlap,831.0,823.0,-8.0
+3,cycles_pooled_recall__leave-one-house-out__one-to-one IoU>=0.5,0.689,0.677,-0.0119999999999999
+3,cycles_pooled_recall__leave-one-house-out__one-to-one any overlap,0.919,0.899,-0.020000000000000018
+3,cycles_pooled_recall__within-house causal__one-to-one IoU>=0.5,0.737,0.765,0.028000000000000025
+3,cycles_pooled_recall__within-house causal__one-to-one any overlap,0.938,0.94,0.0020000000000000018
+3,cycles_pooled_recall__within-house hour profile__one-to-one IoU>=0.5,0.0,0.0,0.0
+3,cycles_pooled_recall__within-house hour profile__one-to-one any overlap,0.0,0.0,0.0
+3,cycles_pooled_recall__within-house__one-to-one IoU>=0.5,0.776,0.776,0.0
+3,cycles_pooled_recall__within-house__one-to-one any overlap,0.949,0.954,0.0050000000000000044
+3,cycles_pooled_true__leave-one-house-out__one-to-one IoU>=0.5,434.0,434.0,0.0
+3,cycles_pooled_true__leave-one-house-out__one-to-one any overlap,434.0,434.0,0.0
+3,cycles_pooled_true__within-house causal__one-to-one IoU>=0.5,434.0,434.0,0.0
+3,cycles_pooled_true__within-house causal__one-to-one any overlap,434.0,434.0,0.0
+3,cycles_pooled_true__within-house hour profile__one-to-one IoU>=0.5,434.0,434.0,0.0
+3,cycles_pooled_true__within-house hour profile__one-to-one any overlap,434.0,434.0,0.0
+3,cycles_pooled_true__within-house__one-to-one IoU>=0.5,434.0,434.0,0.0
+3,cycles_pooled_true__within-house__one-to-one any overlap,434.0,434.0,0.0
+3,loho_pooled_energy_error_pct,4.673,0.431,-4.242
+3,loho_tau_W__held_out_house_15,50.0,50.0,0.0
+3,loho_tau_W__held_out_house_2,50.0,50.0,0.0
+3,loho_tau_W__held_out_house_7,50.0,50.0,0.0
+3,loho_tau_W__held_out_house_8,50.0,50.0,0.0
+3,loho_tau_W__held_out_house_9,50.0,50.0,0.0
+3,missed_cycles_total,97.0,97.0,0.0
+3,pooled_test_F1__Always off,0.0,0.0,0.0
+3,pooled_test_F1__Hour-of-day profile,0.202,0.23,0.027999999999999997
+3,"pooled_test_F1__LightGBM (causal, past 60 min)",0.505,0.524,0.019000000000000017
+3,pooled_test_F1__LightGBM (centered ±60 min),0.556,0.577,0.020999999999999908
+3,pooled_test_MAE_W__Always off,27.492,27.512,0.019999999999999574
+3,pooled_test_MAE_W__Hour-of-day profile,45.104,44.717,-0.38700000000000045
+3,"pooled_test_MAE_W__LightGBM (causal, past 60 min)",25.496,24.538,-0.9579999999999984
+3,pooled_test_MAE_W__LightGBM (centered ±60 min),21.629,20.756,-0.8730000000000011
+3,pooled_test_RMSE_W__Always off,220.25,220.324,0.07400000000001228
+3,pooled_test_RMSE_W__Hour-of-day profile,216.523,215.943,-0.5799999999999841
+3,"pooled_test_RMSE_W__LightGBM (causal, past 60 min)",149.401,146.11,-3.290999999999997
+3,pooled_test_RMSE_W__LightGBM (centered ±60 min),128.287,126.021,-2.2660000000000053
+3,pooled_test_energy_error_pct__Always off,-100.0,-100.0,0.0
+3,pooled_test_energy_error_pct__Hour-of-day profile,-19.41,-19.2,0.21000000000000085
+3,"pooled_test_energy_error_pct__LightGBM (causal, past 60 min)",-11.495,-11.469,0.0259999999999998
+3,pooled_test_energy_error_pct__LightGBM (centered ±60 min),-5.517,-5.896,-0.37899999999999956
+3,pure_false_detections_attributed__Dishwasher,132.0,128.0,-4.0
+3,pure_false_detections_attributed__Freezer(1),2.0,1.0,-1.0
+3,pure_false_detections_attributed__Fridge-Freezer,2.0,3.0,1.0
+3,pure_false_detections_attributed__Kettle,55.0,50.0,-5.0
+3,pure_false_detections_attributed__Microwave,16.0,15.0,-1.0
+3,pure_false_detections_attributed__Television Site,3.0,5.0,2.0
+3,pure_false_detections_attributed__Toaster,2.0,2.0,0.0
+3,pure_false_detections_attributed__Tumble Dryer,55.0,54.0,-1.0
+3,pure_false_detections_attributed__Washer Dryer,19.0,16.0,-3.0
+3,pure_false_detections_attributed__unmetered or unclear,111.0,112.0,1.0
+3,pure_false_detections_total,397.0,386.0,-11.0
+3,tau_W,50.0,50.0,0.0
+2,likely_cycles__house_2,320.0,320.0,0.0
+2,likely_cycles__house_5,666.0,664.0,-2.0
+2,likely_cycles__house_7,833.0,833.0,0.0
+2,likely_cycles__house_8,369.0,369.0,0.0
+2,likely_cycles__house_9,242.0,242.0,0.0
+2,likely_cycles__house_15,248.0,248.0,0.0
+2,complete_cycles__house_2,284.0,284.0,0.0
+2,complete_cycles__house_5,569.0,569.0,0.0
+2,complete_cycles__house_7,793.0,793.0,0.0
+2,complete_cycles__house_8,359.0,359.0,0.0
+2,complete_cycles__house_9,233.0,233.0,0.0
+2,complete_cycles__house_15,234.0,234.0,0.0
+2,cycles_per_week__house_2,4.81,4.81,0.0
+2,cycles_per_week__house_5,8.12,8.1,-0.019999999999999574
+2,cycles_per_week__house_7,10.88,10.88,0.0
+2,cycles_per_week__house_8,5.19,5.19,0.0
+2,cycles_per_week__house_9,3.52,3.52,0.0
+2,cycles_per_week__house_15,3.55,3.55,0.0
+2,duration_min_median__house_2,98.0,98.0,0.0
+2,duration_min_median__house_5,45.0,45.0,0.0
+2,duration_min_median__house_7,61.0,61.0,0.0
+2,duration_min_median__house_8,60.0,60.0,0.0
+2,duration_min_median__house_9,74.0,74.0,0.0
+2,duration_min_median__house_15,93.0,93.0,0.0
+2,energy_kwh_median__house_2,0.637,0.637,0.0
+2,energy_kwh_median__house_5,0.293,0.293,0.0
+2,energy_kwh_median__house_7,0.549,0.549,0.0
+2,energy_kwh_median__house_8,0.786,0.786,0.0
+2,energy_kwh_median__house_9,0.667,0.667,0.0
+2,energy_kwh_median__house_15,0.723,0.723,0.0
+4,exposure__weekday_likely_cycles__2,238.0,238.0,0.0
+4,exposure__weekday_likely_cycles__7,589.0,589.0,0.0
+4,exposure__weekday_likely_cycles__8,277.0,275.0,-2.0
+4,exposure__weekday_likely_cycles__9,117.0,118.0,1.0
+4,exposure__weekday_likely_cycles__15,174.0,174.0,0.0
+4,exposure__weekday_likely_cycles__pooled,1395.0,1394.0,-1.0
+4,exposure__weekday_cycles_starting_in_window__2,34.0,33.0,-1.0
+4,exposure__weekday_cycles_starting_in_window__7,85.0,103.0,18.0
+4,exposure__weekday_cycles_starting_in_window__8,1.0,1.0,0.0
+4,exposure__weekday_cycles_starting_in_window__9,36.0,39.0,3.0
+4,exposure__weekday_cycles_starting_in_window__15,23.0,24.0,1.0
+4,exposure__weekday_cycles_starting_in_window__pooled,179.0,200.0,21.0
+4,exposure__pct_weekday_starts_in_window__2,14.285714285714286,13.865546218487395,-0.42016806722689104
+4,exposure__pct_weekday_starts_in_window__7,14.431239388794568,17.487266553480474,3.056027164685906
+4,exposure__pct_weekday_starts_in_window__8,0.3610108303249097,0.3636363636363636,0.002625533311453876
+4,exposure__pct_weekday_starts_in_window__9,30.76923076923077,33.05084745762712,2.281616688396351
+4,exposure__pct_weekday_starts_in_window__15,13.218390804597702,13.79310344827586,0.5747126436781578
+4,exposure__pct_weekday_starts_in_window__pooled,12.831541218637993,14.347202295552368,1.515661076914375
+4,exposure__pct_weekday_wm_energy_in_window__2,16.51286269993896,15.339716741348644,-1.1731459585903163
+4,exposure__pct_weekday_wm_energy_in_window__7,13.258251470344025,14.75375280440695,1.4955013340629257
+4,exposure__pct_weekday_wm_energy_in_window__8,0.1702283221270703,0.1715825153431002,0.0013541932160299197
+4,exposure__pct_weekday_wm_energy_in_window__9,24.80190863855608,26.905986118786416,2.1040774802303375
+4,exposure__pct_weekday_wm_energy_in_window__15,13.901704281726106,15.300415879493093,1.3987115977669866
+4,exposure__pct_weekday_wm_energy_in_window__pooled,11.144948766416874,11.875091752169348,0.7301429857524742
+4,exposure__mean_wm_w_in_window__2,24.797625372266605,22.987212616389215,-1.8104127558773904
+4,exposure__mean_wm_w_in_window__7,37.89401116528441,42.12558562039791,4.231574455113503
+4,exposure__mean_wm_w_in_window__8,0.4449503427444248,0.4471085485624732,0.0021582058180483754
+4,exposure__mean_wm_w_in_window__9,20.8216677170654,22.565943263361245,1.744275546295846
+4,exposure__mean_wm_w_in_window__15,17.614619148362483,19.36666647522666,1.7520473268641759
+4,exposure__mean_wm_w_in_window__pooled,20.61572499519394,21.915329809948258,1.2996048147543178
+4,exposure__annual_wm_kwh_in_window_est__2,19.41654066648475,17.998987478632756,-1.4175531878519934
+4,exposure__annual_wm_kwh_in_window_est__7,29.671010742417693,32.984333540771566,3.313322798353873
+4,exposure__annual_wm_kwh_in_window_est__8,0.3483961183688847,0.3500859935244165,0.001689875155531817
+4,exposure__annual_wm_kwh_in_window_est__9,16.30336582246221,17.669133575211855,1.365767752749644
+4,exposure__annual_wm_kwh_in_window_est__15,13.792246793167823,15.164099850102474,1.3718530569346505
+4,exposure__annual_wm_kwh_in_window_est__pooled,16.142112671236852,17.159703241189483,1.017590569952631
+4,exposure__mean_aggregate_kw_in_window__2,0.6657835627424018,0.6884188283520416,0.0226352656096398
+4,exposure__mean_aggregate_kw_in_window__7,1.0129699498373648,1.0359624996564072,0.022992549819042418
+4,exposure__mean_aggregate_kw_in_window__8,0.6493054520153997,0.6542809588354815,0.004975506820081854
+4,exposure__mean_aggregate_kw_in_window__9,0.7868369632103972,0.870850382214925,0.08401341900452775
+4,exposure__mean_aggregate_kw_in_window__15,0.2933897211665,0.2949921295223245,0.0016024083558245361
+4,exposure__mean_aggregate_kw_in_window__pooled,0.6863856258514726,0.7129486946771246,0.02656306882565207
+4,exposure__wm_share_of_window_aggregate_pct__2,3.724577589468223,3.33913188740301,-0.38544570206521334
+4,exposure__wm_share_of_window_aggregate_pct__7,3.740882063813286,4.06632340788103,0.32544134406774416
+4,exposure__wm_share_of_window_aggregate_pct__8,0.0685271225373711,0.0683358643599008,-0.00019125817747030205
+4,exposure__wm_share_of_window_aggregate_pct__9,2.6462493109258984,2.591253758879558,-0.054995552046340546
+4,exposure__wm_share_of_window_aggregate_pct__15,6.003829676897955,6.565146841912953,0.561317165014998
+4,exposure__wm_share_of_window_aggregate_pct__pooled,3.003519336469175,3.0738999837671517,0.07038064729797666
+4,exposure__median_frac_energy_inside_window_for_window_starts__2,0.9889098731095473,0.9778197462190942,-0.011090126890453078
+4,exposure__median_frac_energy_inside_window_for_window_starts__7,0.9246591534256804,0.9057094513770876,-0.01894970204859281
+4,exposure__median_frac_energy_inside_window_for_window_starts__8,1.0,1.0,0.0
+4,exposure__median_frac_energy_inside_window_for_window_starts__9,0.9557188870915984,0.9582809806510104,0.0025620935594120597
+4,exposure__median_frac_energy_inside_window_for_window_starts__15,0.9170897605011168,0.91648519651659,-0.0006045639845267958
+4,exposure__median_frac_energy_inside_window_for_window_starts__pooled,0.9404202424072752,0.9297522654565696,-0.010667976950705538
+4,model_window__actual_window_starts__one-to-one IoU>=0.5 | within-house | pooled,29.0,44.0,15.0
+4,model_window__actual_weekday_cycles__one-to-one IoU>=0.5 | within-house | pooled,310.0,311.0,1.0
+4,model_window__pred_window_starts__one-to-one IoU>=0.5 | within-house | pooled,95.0,122.0,27.0
+4,model_window__pred_pct_window_starts__one-to-one IoU>=0.5 | within-house | pooled,16.57940663176265,21.36602451838879,4.786617886626139
+4,model_window__actual_pct_window_starts__one-to-one IoU>=0.5 | within-house | pooled,9.35483870967742,14.14790996784566,4.79307125816824
+4,model_window__actual_window_starts_matched__one-to-one IoU>=0.5 | within-house | pooled,17.0,24.0,7.0
+4,model_window__pred_window_starts_matched__one-to-one IoU>=0.5 | within-house | pooled,15.0,23.0,8.0
+4,model_window__window_recall__one-to-one IoU>=0.5 | within-house | pooled,0.5862068965517241,0.5454545454545454,-0.040752351097178674
+4,model_window__window_precision__one-to-one IoU>=0.5 | within-house | pooled,0.1578947368421052,0.1885245901639344,0.030629853321829215
+4,model_window__mean_abs_house_error_pct_points__one-to-one IoU>=0.5 | within-house | pooled,6.259408769033211,7.912765487635821,1.65335671860261
+4,model_window__actual_window_starts__one-to-one IoU>=0.5 | leave-one-house-out | pooled,29.0,44.0,15.0
+4,model_window__actual_weekday_cycles__one-to-one IoU>=0.5 | leave-one-house-out | pooled,310.0,311.0,1.0
+4,model_window__pred_window_starts__one-to-one IoU>=0.5 | leave-one-house-out | pooled,113.0,135.0,22.0
+4,model_window__pred_pct_window_starts__one-to-one IoU>=0.5 | leave-one-house-out | pooled,15.437158469945356,18.67219917012448,3.2350407001791233
+4,model_window__actual_pct_window_starts__one-to-one IoU>=0.5 | leave-one-house-out | pooled,9.35483870967742,14.14790996784566,4.79307125816824
+4,model_window__actual_window_starts_matched__one-to-one IoU>=0.5 | leave-one-house-out | pooled,13.0,22.0,9.0
+4,model_window__pred_window_starts_matched__one-to-one IoU>=0.5 | leave-one-house-out | pooled,13.0,20.0,7.0
+4,model_window__window_recall__one-to-one IoU>=0.5 | leave-one-house-out | pooled,0.4482758620689655,0.5,0.051724137931034475
+4,model_window__window_precision__one-to-one IoU>=0.5 | leave-one-house-out | pooled,0.1150442477876106,0.1481481481481481,0.03310390036053751
+4,model_window__mean_abs_house_error_pct_points__one-to-one IoU>=0.5 | leave-one-house-out | pooled,7.103134411482924,5.939237618293586,-1.1638967931893376
+4,model_window__actual_window_starts__one-to-one any overlap (sensitivity) | within-house | pooled,29.0,44.0,15.0
+4,model_window__actual_weekday_cycles__one-to-one any overlap (sensitivity) | within-house | pooled,310.0,311.0,1.0
+4,model_window__pred_window_starts__one-to-one any overlap (sensitivity) | within-house | pooled,95.0,122.0,27.0
+4,model_window__pred_pct_window_starts__one-to-one any overlap (sensitivity) | within-house | pooled,16.57940663176265,21.36602451838879,4.786617886626139
+4,model_window__actual_pct_window_starts__one-to-one any overlap (sensitivity) | within-house | pooled,9.35483870967742,14.14790996784566,4.79307125816824
+4,model_window__actual_window_starts_matched__one-to-one any overlap (sensitivity) | within-house | pooled,25.0,41.0,16.0
+4,model_window__pred_window_starts_matched__one-to-one any overlap (sensitivity) | within-house | pooled,24.0,37.0,13.0
+4,model_window__window_recall__one-to-one any overlap (sensitivity) | within-house | pooled,0.8620689655172413,0.9318181818181818,0.06974921630094044
+4,model_window__window_precision__one-to-one any overlap (sensitivity) | within-house | pooled,0.2526315789473684,0.3032786885245901,0.05064710957722174
+4,model_window__mean_abs_house_error_pct_points__one-to-one any overlap (sensitivity) | within-house | pooled,6.259408769033211,7.912765487635821,1.65335671860261
+4,model_window__actual_window_starts__one-to-one any overlap (sensitivity) | leave-one-house-out | pooled,29.0,44.0,15.0
+4,model_window__actual_weekday_cycles__one-to-one any overlap (sensitivity) | leave-one-house-out | pooled,310.0,311.0,1.0
+4,model_window__pred_window_starts__one-to-one any overlap (sensitivity) | leave-one-house-out | pooled,113.0,135.0,22.0
+4,model_window__pred_pct_window_starts__one-to-one any overlap (sensitivity) | leave-one-house-out | pooled,15.437158469945356,18.67219917012448,3.2350407001791233
+4,model_window__actual_pct_window_starts__one-to-one any overlap (sensitivity) | leave-one-house-out | pooled,9.35483870967742,14.14790996784566,4.79307125816824
+4,model_window__actual_window_starts_matched__one-to-one any overlap (sensitivity) | leave-one-house-out | pooled,26.0,36.0,10.0
+4,model_window__pred_window_starts_matched__one-to-one any overlap (sensitivity) | leave-one-house-out | pooled,25.0,32.0,7.0
+4,model_window__window_recall__one-to-one any overlap (sensitivity) | leave-one-house-out | pooled,0.896551724137931,0.8181818181818182,-0.07836990595611282
+4,model_window__window_precision__one-to-one any overlap (sensitivity) | leave-one-house-out | pooled,0.2212389380530973,0.237037037037037,0.01579809898393969
+4,model_window__mean_abs_house_error_pct_points__one-to-one any overlap (sensitivity) | leave-one-house-out | pooled,7.103134411482924,5.939237618293586,-1.1638967931893376
+4,heating_share_pct__2,79.21597966359064,79.21597966359064,0.0
+4,heating_share_pct__7,77.49209183679824,77.49210240453363,1.0567735387212451e-05
+4,heating_share_pct__8,89.1657066138285,89.1624440012101,-0.003262612618399885
+4,heating_share_pct__9,81.57305729650786,81.57305729650787,1.4210854715202004e-14
+4,heating_share_pct__15,78.76821131701188,78.76821131701186,-1.4210854715202004e-14
+4,heating_share_pct__pooled,81.33555920892248,81.31938032689604,-0.01617888202643769
+4,resolution__median_visibility_ratio__pooled@1min,7.420920545239923,7.405448601092877,-0.015471944147046557
+4,resolution__pct_cycles_ratio_ge_2__pooled@1min,100.0,100.0,0.0
+4,resolution__median_visibility_ratio__pooled@15min,3.016984604401079,3.0089336911873485,-0.008050913213730304
+4,resolution__pct_cycles_ratio_ge_2__pooled@15min,83.5,83.5,0.0
+4,resolution__median_visibility_ratio__pooled@30min,1.8651071337336604,1.8653438464551224,0.00023671272146197353
+4,resolution__pct_cycles_ratio_ge_2__pooled@30min,40.75,40.75,0.0
+4,sample_size__households_per_arm__1.0,2517.0,2514.0,-3.0
+4,sample_size__households_per_arm__0.5,10068.0,10053.0,-15.0
+4,sample_size__households_per_arm__0.25,40271.0,40212.0,-59.0
+4,sample_size__sigma_kw,0.2611901433204046,0.2774528105235289,0.016262667203124304

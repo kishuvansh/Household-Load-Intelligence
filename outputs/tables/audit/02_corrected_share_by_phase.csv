@@ -1,0 +1,15 @@
+Phase,Quantity,House,Total,In_Corrected_Periods,Pct
+2,likely cycles,all,2676,499,18.6
+2,likely cycles,2,320,45,14.1
+2,likely cycles,5,664,110,16.6
+2,likely cycles,7,833,194,23.3
+2,likely cycles,8,369,48,13.0
+2,likely cycles,9,242,53,21.9
+2,likely cycles,15,248,49,19.8
+3,test minutes,all,677486,449442,66.3
+4,weekday 16:00-19:00 window minutes (full record),2,59002,9181,15.6
+4,weekday 16:00-19:00 window minutes (full record),7,68766,12931,18.8
+4,weekday 16:00-19:00 window minutes (full record),8,61953,6992,11.3
+4,weekday 16:00-19:00 window minutes (full record),9,58984,13639,23.1
+4,weekday 16:00-19:00 window minutes (full record),15,63258,13466,21.3
+4,weekday 16:00-19:00 window minutes (full record),all,311963,56209,18.0

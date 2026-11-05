@@ -427,6 +427,9 @@ def load_other_appliances(house: int, start: pd.Timestamp, end: pd.Timestamp) ->
     wm_ch = int(p2.HOUSES[house]["channel"].replace("Appliance", ""))
     cols = [f"Appliance{i}" for i in names if i != wm_ch]
     raw = pd.read_csv(p2.CLEAN_DIR / f"CLEAN_House{house}.csv", usecols=["Unix"] + cols)
+    if p2.OFFICIAL_CLOCK_FIX:  # same clock correction as the WM/aggregate data (phase2/wm_eda.py)
+        fixed = p2.correct_official_clock(raw["Unix"].to_numpy(), house)
+        raw = raw.loc[~np.isnan(fixed)].assign(Unix=fixed[~np.isnan(fixed)].astype("int64"))
     raw = raw[(raw["Unix"] >= start.timestamp() - 3600) & (raw["Unix"] <= end.timestamp() + 3600)]
     raw.index = pd.to_datetime(raw["Unix"], unit="s", utc=True)
     out = raw[cols].resample("1min").mean()

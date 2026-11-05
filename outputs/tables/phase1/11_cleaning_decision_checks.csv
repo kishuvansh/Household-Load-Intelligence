@@ -47,3 +47,5 @@ Glitch rule,"Appliance8: readings outside [0, 4000] W remaining after cleaning",
 Glitch rule,"Appliance9: readings outside [0, 4000] W remaining after cleaning",0,
 Coverage rule,Minutes with 0 < coverage < 30 s set to missing (Aggregate),717,
 Coverage rule,Minutes kept with 30-59 s coverage (Aggregate),1647,
+Sub-meter consistency,Minutes with all 10 channels where the 9 sub-meters sum to more than Aggregate + 100 W (%),0.65 of 699122,reported only; sensors are not synchronised
+Sub-meter consistency,Median share of Aggregate measured by the 9 sub-meters (%),27.7,

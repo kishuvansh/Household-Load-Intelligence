@@ -1,5 +1,5 @@
 case,house,start_utc,end_utc
-Missed cycle (largest-energy true cycle with no overlapping prediction),7,2015-04-15 14:33:00+00:00,2015-04-15 15:27:00+00:00
-Found but badly aligned (largest-energy true cycle with best IoU 0.40 < 0.5),2,2015-02-23 12:15:00+00:00,2015-02-23 15:55:00+00:00
-False detection (largest with no WM activity; attributed to: unmetered or unclear),2,2015-03-28 04:00:00+00:00,2015-03-28 08:41:00+00:00
+Missed cycle (largest-energy true cycle with no overlapping prediction),2,2015-03-21 00:06:00+00:00,2015-03-21 01:36:00+00:00
+Found but badly aligned (largest-energy true cycle with best IoU 0.50 < 0.5),9,2015-06-06 18:59:00+00:00,2015-06-06 21:43:00+00:00
+False detection (largest with no WM activity; attributed to: unmetered or unclear),8,2015-05-06 05:29:00+00:00,2015-05-06 07:33:00+00:00
 Overlapping loads (true cycle with highest concurrent other load),8,2015-02-24 05:15:00+00:00,2015-02-24 05:44:00+00:00

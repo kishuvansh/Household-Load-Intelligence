@@ -1,0 +1,7 @@
+House,Lag_As_Published_Min,Lag_Corrected_Min,Profile_Corr,Rows_Dropped_By_Correction,Reading
+2,60,0,0.937,1513,"supports correction: about +60 min as published, about 0 corrected"
+5,60,0,0.899,1233,"supports correction: about +60 min as published, about 0 corrected"
+7,55,-5,0.875,1436,"supports correction: about +60 min as published, about 0 corrected"
+8,100,40,0.913,1426,"correction moves the profile by 60 min as predicted, but a residual offset remains"
+9,55,-5,0.933,1461,"supports correction: about +60 min as published, about 0 corrected"
+15,-40,-100,0.519,1433,"weak profile, inconclusive"

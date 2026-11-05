@@ -60,7 +60,7 @@ EXCLUDED = {
 # ----------------------------------------------------------------------------
 # Analysis parameters (all documented in DATA.md / RESULTS.md)
 # ----------------------------------------------------------------------------
-LOCAL_TZ = "Europe/London"   # Unix column is UTC; behaviour is analysed in UK local time
+LOCAL_TZ = "Europe/London"   # Unix (after the clock correction below) is UTC; behaviour is analysed in UK local time
 ACTIVE_W = 20.0              # 1-min mean WM power above this = "active minute"
 MERGE_GAP_MIN = 15           # active runs separated by <= this many minutes are one activity period
 FROZEN_MIN = 60              # identical non-zero value held longer than this = frozen sensor
@@ -71,6 +71,30 @@ CYCLE_MIN_DURATION_MIN = 10
 CYCLE_MAX_DURATION_MIN = 300
 CYCLE_MIN_ENERGY_KWH = 0.05
 CYCLE_MIN_PEAK_W = 200.0
+
+# ----------------------------------------------------------------------------
+# Correction of the official files' clock (found by the project audit; evidence in
+# audit/official_timestamp_check.py and outputs/tables/audit/).
+# The readme states that `Unix` is UTC with daylight saving corrected. That holds while
+# an official file is built from raw Part 1. From the switch to raw Part 2 (the last raw
+# Part 1 row, on the evening of 2014-09-30) the official `Unix` equals the raw UK wall
+# clock instead, i.e. one hour later than UTC during BST. The correction:
+#   * rows up to the switch: unchanged (already UTC);
+#   * rows after it: read the label as Europe/London local time and convert to UTC
+#     (-3600 s in BST, 0 s in GMT);
+#   * the repeated local hour 01:00-01:59 on 2014-10-26 is interleaved in the file and
+#     cannot be split into its BST and GMT copies, so those rows are dropped;
+#   * shifted rows that land at or before the switch duplicate real time already
+#     covered by Part 1 (both raw files record the same sensors), so they are dropped.
+# Set REFIT_OFFICIAL_CLOCK=as_published to reproduce the uncorrected baseline.
+# ----------------------------------------------------------------------------
+OFFICIAL_CLOCK_FIX = os.environ.get("REFIT_OFFICIAL_CLOCK", "corrected") != "as_published"
+# Official `Unix` label (UTC) of the last row built from raw Part 1 = last raw Part 1 Unix - 3600 s
+# (raw Part 1 ends during BST). Verified per house by audit/official_timestamp_check.py.
+PART2_SWITCH_UTC = {
+    2: "2014-09-30 21:10:37", 5: "2014-09-30 22:31:11", 7: "2014-09-30 23:26:51",
+    8: "2014-09-30 23:15:36", 9: "2014-09-30 23:44:35", 15: "2014-09-30 22:10:21",
+}
 
 GOOD_DAY_MIN_AVAIL = 0.95    # a day needs >=95% valid minutes to be used as a "representative day"
 WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
@@ -130,6 +154,16 @@ def load_house(house: int) -> tuple[pd.DataFrame, dict]:
         "aggregate_max_w": float(raw["aggregate_w"].max()),
     }
 
+    # Clock correction (see PART2_SWITCH_UTC): official labels -> true UTC before anything else.
+    if OFFICIAL_CLOCK_FIX:
+        fixed = correct_official_clock(raw["Unix"].to_numpy(), house)
+        checks["clock_rows_shifted"] = int((~np.isnan(fixed) & (fixed != raw["Unix"].to_numpy())).sum())
+        checks["clock_rows_dropped"] = int(np.isnan(fixed).sum())
+        raw = raw.loc[~np.isnan(fixed)].copy()
+        raw["Unix"] = fixed[~np.isnan(fixed)].astype("int64")
+    else:
+        checks["clock_rows_shifted"] = checks["clock_rows_dropped"] = 0
+
     # Sort and de-duplicate. Rule: keep the first reading for a repeated Unix second
     # (the cleaned files are expected to be clean already; this is a safety net).
     raw = raw.sort_values("Unix", kind="stable").drop_duplicates("Unix", keep="first")
@@ -148,6 +182,19 @@ def load_house(house: int) -> tuple[pd.DataFrame, dict]:
     raw.loc[agg_frozen, "aggregate_w"] = np.nan
     raw.index = pd.to_datetime(raw["Unix"], unit="s", utc=True)
     return raw.drop(columns="Unix"), checks
+
+
+def correct_official_clock(unix: np.ndarray, house: int) -> np.ndarray:
+    """Official `Unix` label -> true UTC seconds (float). NaN marks a row to drop.
+    See the PART2_SWITCH_UTC comment block for the rule and its evidence."""
+    u = np.asarray(unix, dtype="int64")
+    out = u.astype(float)
+    switch = int(pd.Timestamp(PART2_SWITCH_UTC[house], tz="UTC").timestamp())
+    p2 = u > switch
+    local = pd.DatetimeIndex(pd.to_datetime(u[p2], unit="s")).tz_localize(LOCAL_TZ, ambiguous="NaT", nonexistent="NaT")
+    utc = np.where(local.isna(), np.nan, local.asi8 / 1e9)
+    out[p2] = np.where(utc <= switch, np.nan, utc)
+    return out
 
 
 def resample_1min(samples: pd.DataFrame) -> pd.DataFrame:

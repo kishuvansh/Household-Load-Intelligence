@@ -9,13 +9,13 @@
   },
   "cycle_matching": "one-to-one greedy by temporal IoU, IoU >= 0.5 (sensitivity: any overlap)",
   "best_iterations": {
-    "within_house": 367,
-    "causal": 220,
-    "loho_holdout_2": 761,
-    "loho_holdout_7": 284,
-    "loho_holdout_8": 372,
-    "loho_holdout_9": 458,
-    "loho_holdout_15": 380
+    "within_house": 507,
+    "causal": 293,
+    "loho_holdout_2": 313,
+    "loho_holdout_7": 218,
+    "loho_holdout_8": 391,
+    "loho_holdout_9": 229,
+    "loho_holdout_15": 285
   },
   "lgb_params": {
     "objective": "regression",
@@ -114,5 +114,5 @@
   ],
   "buffer_days": 1,
   "lightgbm_version": "4.6.0",
-  "runtime_s": 110.6
+  "runtime_s": 99.4
 }

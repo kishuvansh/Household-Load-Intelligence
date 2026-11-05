@@ -32,4 +32,5 @@ Flock_Energy - Data Science.pdf
 
 # Baseline snapshot before the official-clock correction (local only)
 .baseline_pre_clockfix/
+# can be regenerated 
 Data/processed/phase1/

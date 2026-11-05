@@ -87,8 +87,11 @@ def dst_check(d: dict) -> pd.DataFrame:
         utc_h = idx[win].hour
         gmt_hours = sorted(set(utc_h[offset_h == 0])), sorted(set(utc_h[offset_h == 1]))
         off_day = pd.Series([t.utcoffset().total_seconds() for t in loc], index=idx).groupby(day).first()
-        change_days = off_day.index[1:][off_day.to_numpy()[1:] != off_day.to_numpy()[:-1]]
-        mondays = [c + pd.Timedelta(days=1) for c in change_days]
+        # First local day whose first minute carries the new UTC offset. UK clocks change at 01:00 UTC on a
+        # Sunday, so the Sunday still starts on the old offset and this is the Monday after the change.
+        mondays = list(off_day.index[1:][off_day.to_numpy()[1:] != off_day.to_numpy()[:-1]])
+        assert all(x.dayofweek == 0 for x in mondays), "expected the Monday after each clock change"
+        change_days = mondays
         rows.append({"house": h, "complete_weekdays": int(sel.sum()),
                      "weekdays_with_180_window_minutes": int((per_day[sel] == 180).sum()),
                      "window_utc_hours_when_GMT": ",".join(map(str, gmt_hours[0])),

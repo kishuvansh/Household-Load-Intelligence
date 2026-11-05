@@ -358,7 +358,7 @@ def outage_table(combined: pd.DataFrame, min_hours: float = 1.0) -> pd.DataFrame
                          "Duration_Hours": np.round(d[k] / 3600, 2), "Source_Part": np.where(t[k] <= HANDOFF_UTC, 1, 2)})
 
 
-def cleaning_checks(sel: dict, combined: pd.DataFrame, dstats: dict, cov: pd.DataFrame) -> pd.DataFrame:
+def cleaning_checks(sel: dict, combined: pd.DataFrame, dstats: dict, cov: pd.DataFrame, m: pd.DataFrame) -> pd.DataFrame:
     rows = []
     add = lambda area, metric, value, note="": rows.append({"Area": area, "Metric": metric, "Value": value, "Note": note})
     for p in (1, 2):
@@ -388,6 +388,14 @@ def cleaning_checks(sel: dict, combined: pd.DataFrame, dstats: dict, cov: pd.Dat
     partial = ((cov > 0) & (cov < MIN_COVERAGE_S)).sum()
     add("Coverage rule", "Minutes with 0 < coverage < 30 s set to missing (Aggregate)", int(partial["Aggregate"]))
     add("Coverage rule", "Minutes kept with 30-59 s coverage (Aggregate)", int(((cov["Aggregate"] >= MIN_COVERAGE_S) & (cov["Aggregate"] < 60)).sum()))
+    # Sub-meters vs aggregate (reported only; REFIT flags this with its `Issues` column and no rule is applied here).
+    apps = [c for c in CHANNELS if c != "Aggregate"]
+    full = m[CHANNELS].dropna()
+    excess = full[apps].sum(axis=1) - full["Aggregate"]
+    add("Sub-meter consistency", "Minutes with all 10 channels where the 9 sub-meters sum to more than Aggregate + 100 W (%)",
+        f"{round(100 * float((excess > 100).mean()), 2)} of {len(full)}", "reported only; sensors are not synchronised")
+    add("Sub-meter consistency", "Median share of Aggregate measured by the 9 sub-meters (%)",
+        round(100 * float((full[apps].sum(axis=1) / full["Aggregate"]).median()), 1))
     return pd.DataFrame(rows)
 
 
@@ -708,7 +716,7 @@ def build(verbose: bool = True) -> dict:
         "t06_energy": ev,
         "t07_clock_changes": changes,
         "t10_energy_decomposition": energy_decomposition(sel, combined, m),
-        "t11_cleaning_checks": cleaning_checks(sel, combined, dstats, cov),
+        "t11_cleaning_checks": cleaning_checks(sel, combined, dstats, cov, m),
         "t12_handoff_agreement": handoff_agreement({p: norm_clean[p][norm_clean[p].keep] for p in norm_clean}),
         "t13_outages": outages,
     }
@@ -748,7 +756,8 @@ def write_outputs(res: dict, out_root: Path | str = ROOT, verbose: bool = True) 
         written.append(p["tables"] / fname)
     final = export_frame(res["m"])
     final.to_parquet(p["data"] / "house1_cleaned_1min.parquet", index=False)
-    final.to_csv(p["data"] / "house1_cleaned_1min.csv.gz", index=False, compression="gzip")
+    final.to_csv(p["data"] / "house1_cleaned_1min.csv.gz", index=False,
+                 compression={"method": "gzip", "mtime": 0})  # fixed header time: identical bytes on every run
     written += [p["data"] / "house1_cleaned_1min.parquet", p["data"] / "house1_cleaned_1min.csv.gz"]
     res["figs"] = make_figures(res["norm"], res["combined"], res["m"], res["t13_outages"], p["figures"])
     written += res["figs"]

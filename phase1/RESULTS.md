@@ -95,9 +95,21 @@ Table 15 checks the official files for the houses used in Phases 2–4 (2, 5, 7,
 
 These are signs of local-clock time stamps, or of an imperfect conversion, around the clock changes.
 
-Phases 2–4 treat the official `Unix` column as UTC. **If these periods are on local time, hour-of-day results in
-BST periods could be one hour off**, for example Phase 4's 16:00–19:00 window. Phases 2–4 were not changed, as
-instructed. This is flagged for a decision.
+**Confirmed directly for the Phase 2–4 houses.** [`audit/official_timestamp_check.py`](../audit/official_timestamp_check.py)
+compares each official file with its own raw file month by month
+([`01_official_vs_raw_clock_by_month.csv`](../outputs/tables/audit/01_official_vs_raw_clock_by_month.csv)):
+
+- In every BST month taken from raw Part 1, the official timestamps were converted to UTC.
+- In every BST month taken from raw Part 2, they equal the raw UK local clock, i.e. one hour later than UTC.
+- The official files switch from Part 1 to Part 2 at the last raw Part 1 row, on the evening of 30 Sep 2014. So the
+  affected periods run from then to 26 Oct 2014, and from 29 Mar 2015 onwards.
+
+**Correction applied in Phases 2–4.** After this finding, Phase 2's loader corrects the official timestamps to UTC
+before any analysis, and Phases 2–4 were regenerated (see [phase2/DATA.md §1](../phase2/DATA.md)). The correction
+re-times 18.6% of Phase 2's likely cycles, 66.3% of Phase 3's test minutes and 18.0% of Phase 4's weekday window
+minutes ([`02_corrected_share_by_phase.csv`](../outputs/tables/audit/02_corrected_share_by_phase.csv)). The
+uncorrected results remain reproducible, and every changed number is listed in
+[`07_baseline_vs_corrected_metrics.csv`](../outputs/tables/audit/07_baseline_vs_corrected_metrics.csv).
 
 ## 3. Energy validation
 
@@ -155,6 +167,7 @@ holding would fill the long outages (`Hold_Limit_Effect_Pct`, table 06).
 | Part 2 per-channel NaN means "not reported in this packet" | REFIT readme | the median gap between a channel's readings is 7 s for every channel (table 11) |
 | Minute kept only with at least 30 s coverage | Project choice | 717 partly covered aggregate minutes dropped (table 11) |
 | Unresolvable repeated hour (26 Oct 2014) removed | Project choice | 986 rows (tables 02, 07) |
+| Sub-meters vs aggregate (sum of 9 sub-meters > aggregate + 100 W) | Reported only, no rule (REFIT marks this with its `Issues` column) | 0.65% of complete minutes; the sub-meters measure a median 27.7% of the aggregate (table 11) |
 
 ## 5. Output
 
@@ -178,8 +191,8 @@ daily availability (05).
    3,072 W (table 04).
 5. **The hold and coverage limits are this project's conservative choices.** They are not the official REFIT
    method, so energy during short unlogged gaps is left missing rather than estimated.
-6. **The official REFIT files appear to use local time in BST periods** (section 2). This could affect Phases 2–4,
-   which were not changed.
+6. **The official REFIT files use UK local time in their Part 2 BST periods** (section 2, confirmed for every
+   Phase 2–4 house). Corrected in Phases 2–4 by Phase 2's loader; Phase 1 does not use these files.
 
 ## Reproduce
 

@@ -6,19 +6,23 @@ full available record (Sept 2013 – July 2015; exact dates in [DATA.md §5](DAT
 [`02_washing_machine_eda.ipynb`](02_washing_machine_eda.ipynb). Both produce the same outputs.
 **Numbers:** every value here is in [`outputs/tables/phase2/`](../outputs/tables/phase2/). The headline values
 are collected in [`12_key_numbers.csv`](../outputs/tables/phase2/12_key_numbers.csv).
+**Clock correction:** the official files keep UK local time in their Part 2 summer periods. The loader corrects
+this to UTC before any analysis (see [DATA.md §1](DATA.md#1-source-files)). The figures here are after the
+correction. The changes against the uncorrected run are listed in
+[`07_baseline_vs_corrected_metrics.csv`](../outputs/tables/audit/07_baseline_vs_corrected_metrics.csv).
 
 ---
 
 ## 1. Summary
 
-- **2,678 likely wash cycles** were detected across the six homes. Of these, 2,472 are complete (no missing data
+- **2,676 likely wash cycles** were detected across the six homes. Of these, 2,472 are complete (no missing data
   nearby) and are used for duration and energy statistics.
 - **Frequency varies about 3×:** from 3.5 cycles per week (Houses 9 and 15) to 10.9 per week (House 7).
 - **A typical cycle uses 0.29–0.79 kWh** (house medians) and lasts 45–98 min. Almost every complete cycle
   (90–100% per house) includes a ~2 kW water-heating phase near the start.
 - **Washing machines are a small share of household electricity:** 2.7–6.8% of aggregate energy. They are,
   however, a concentrated ~2 kW load that can be scheduled.
-- **Timing is household-specific.** House 8 starts 77% of its cycles between midnight and 07:00 (delay timer or
+- **Timing is household-specific.** House 8 starts 80.5% of its cycles between midnight and 07:00 (delay timer or
   off-peak tariff). House 7 peaks at 07:00–08:00. Houses 5 and 9 wash 2.6–3.5× more often per day at weekends.
 - **Occupancy alone does not predict use.** The two most frequent users are 4-person homes, but the third
   4-person home (House 2) washes about as often as a 2-person home.
@@ -52,7 +56,7 @@ are collected in [`12_key_numbers.csv`](../outputs/tables/phase2/12_key_numbers.
 | House | Activity periods | Likely cycles | of which complete | of which gap-affected | Short/small activity | Long (>300 min) |
 |---|---|---|---|---|---|---|
 | 2 | 350 | 320 | 284 | 36 | 30 | 0 |
-| 5 | 1079 | 666 | 569 | 97 | 398 | 15 |
+| 5 | 1078 | 664 | 569 | 95 | 398 | 16 |
 | 7 | 906 | 833 | 793 | 40 | 72 | 1 |
 | 8 | 432 | 369 | 359 | 10 | 63 | 0 |
 | 9 | 265 | 242 | 233 | 9 | 23 | 0 |
@@ -71,14 +75,14 @@ The threshold and pause length were varied (10/20/50 W × 5/10/15/30 min):
 | House | Likely cycles at chosen setting (20 W, 15 min) | Range across 12 settings | Range as % of chosen |
 |---|---|---|---|
 | 2 | 320 | 301–375 | 23.1% |
-| 5 | 666 | 596–722 | 18.9% |
+| 5 | 664 | 594–720 | 19.0% |
 | 7 | 833 | 798–904 | 12.7% |
 | 8 | 369 | 362–369 | 1.9% |
 | 9 | 242 | 233–254 | 8.7% |
 | 15 | 248 | 234–257 | 9.3% |
 
 The **power threshold barely matters.** At a 15-min pause, moving from 10 W to 50 W changes counts by at most
-14 cycles in any house (House 5: 655–669). Most of the spread comes from the **pause length** (5 vs 30 min), which decides whether
+14 cycles in any house (House 5: 653–667). Most of the spread comes from the **pause length** (5 vs 30 min), which decides whether
 a long internal pause splits a programme. Houses 7 and 5 are the two most frequent users under every setting.
 The near-tied pairs (House 8 vs 2, and 9 vs 15) can swap order, so their ranking should not be over-read.
 
@@ -88,12 +92,12 @@ The near-tied pairs (House 8 vs 2, and 9 vs 15) can swap order, so their ranking
 
 | House | Span (days) | Observed days | WM availability | Longest gap |
 |---|---|---|---|---|
-| 2 | 617.4 | 465.4 | 75.38% | 62.0 d from 2013-10-25 |
-| 5 | 648.3 | 574.0 | 88.53% | 8.6 d from 2015-05-10 |
-| 7 | 613.2 | 536.0 | 87.41% | 41.6 d from 2014-01-24 |
-| 8 | 555.1 | 498.1 | 89.73% | 39.1 d from 2014-01-26 |
-| 9 | 568.1 | 480.7 | 84.62% | 41.6 d from 2014-01-24 |
-| 15 | 567.4 | 489.7 | 86.31% | 8.6 d from 2015-05-10 |
+| 2 | 617.4 | 465.3 | 75.37% | 62.0 d from 2013-10-25 |
+| 5 | 648.3 | 573.9 | 88.52% | 8.6 d from 2015-05-10 |
+| 7 | 613.1 | 535.9 | 87.41% | 41.6 d from 2014-01-24 |
+| 8 | 555.0 | 498.0 | 89.72% | 39.1 d from 2014-01-26 |
+| 9 | 568.0 | 480.6 | 84.61% | 41.6 d from 2014-01-24 |
+| 15 | 567.3 | 489.6 | 86.30% | 8.6 d from 2015-05-10 |
 
 ![Daily availability](../outputs/figures/phase2/01_wm_daily_availability.png)
 
@@ -154,7 +158,7 @@ which reflects wash temperature.
 | House | Occupants | Likely cycles / week | per occupant | Median duration (IQR), min | Median energy (IQR), kWh | Heated cycles | Active min / day | WM kWh / day | WM kWh / year (est.) | WM share of aggregate |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 2 | 4 | 4.81 | 1.20 | 98 (91–107) | 0.637 (0.509–0.706) | 100.0% | 67.5 | 0.434 | 158 | 3.96% |
-| 5 | 4 | 8.12 | 2.03 | 45 (35–76) | 0.293 (0.209–0.476) | 90.5% | 79.6 | 0.581 | 212 | 3.26% |
+| 5 | 4 | 8.10 | 2.02 | 45 (35–76) | 0.293 (0.209–0.476) | 90.5% | 79.6 | 0.581 | 212 | 3.26% |
 | 7 | 4 | **10.88** | 2.72 | 61 (57–107) | 0.549 (0.454–0.651) | 99.9% | **120.4** | **0.906** | 331 | 6.74% |
 | 8 | 2 | 5.19 | 2.59 | 60 (51–77) | **0.786** (0.620–1.263) | 99.7% | 47.8 | 0.704 | 257 | 4.30% |
 | 9 | 2 | 3.52 | 1.76 | 74 (69–80) | 0.667 (0.519–0.886) | 98.7% | 38.6 | 0.361 | 132 | 2.71% |
@@ -175,8 +179,8 @@ kWh per observed day × 365.
   highest rate per occupant. Six homes are far too few to estimate an occupancy effect.
 - **WM share of aggregate is 2.7–6.8%.** House 15's share is high mainly because its total consumption is low:
   6.12 kWh per observed day, against 11–18 kWh in the other homes (`aggregate_kwh_per_observed_day`).
-- **House 5 should be read with care.** Its short, low-energy cycles, many blips, and 18% of WM energy outside
-  likely cycles (`pct_wm_energy_in_likely_cycles` = 82.1% vs ≥ 98.7% elsewhere) are consistent with a washer-dryer
+- **House 5 should be read with care.** Its short, low-energy cycles, many blips, and 19% of WM energy outside
+  likely cycles (`pct_wm_energy_in_likely_cycles` = 81.3% vs ≥ 98.7% elsewhere) are consistent with a washer-dryer
   whose drying runs are counted separately.
 
 ---
@@ -190,20 +194,20 @@ Rates are normalised by observed time ([`07_hourly_profile.csv`](../outputs/tabl
 
 | House | Peak start hour (local) | Starts per 100 days in peak hour | % of starts 00:00–06:59 |
 |---|---|---|---|
-| 2 | 09:00 | 8.0 | 1.9% |
-| 5 | 10:00 | 11.0 | 4.2% |
-| 7 | 07:00 | 30.1 | 0.5% |
-| 8 | 06:00 | 16.1 | **77.0%** |
-| 9 | 17:00 | 5.6 | 1.2% |
-| 15 | 11:00 | 4.5 | 19.4% |
+| 2 | 08:00 | 7.5 | 1.9% |
+| 5 | 10:00 | 11.1 | 4.4% |
+| 7 | 07:00 | 33.3 | 2.4% |
+| 8 | 06:00 | 18.5 | **80.5%** |
+| 9 | 17:00 | 5.4 | 0.8% |
+| 15 | 11:00 | 4.7 | 19.4% |
 
 **Interpretation.**
 - Most homes start cycles during the daytime, from mid-morning to early evening.
 - **House 7** peaks sharply at 07:00–08:00, with a second peak around 18:00. That fits washing before and after
   work or school.
-- **House 8** runs almost entirely overnight: 77% of starts fall between midnight and 07:00. That suggests a
+- **House 8** runs almost entirely overnight: 80.5% of starts fall between midnight and 07:00. That suggests a
   delay timer or an off-peak (e.g. Economy 7) tariff, though the data cannot say which.
-- **House 15** also starts about a fifth of its cycles in the early morning (04:00–06:00).
+- **House 15** also starts about a fifth of its cycles before 07:00, mostly at 04:00–06:00.
 - The lower heatmap (mean WM power by hour) shows the same patterns in energy terms.
 
 ![Usage by weekday](../outputs/figures/phase2/06_usage_by_weekday.png)
@@ -211,10 +215,10 @@ Rates are normalised by observed time ([`07_hourly_profile.csv`](../outputs/tabl
 | House | Weekday cycles / observed day | Weekend cycles / observed day | Weekend ÷ weekday |
 |---|---|---|---|
 | 2 | 0.73 | 0.59 | 0.82 |
-| 5 | 0.67 | 2.37 | **3.51** |
+| 5 | 0.67 | 2.35 | **3.49** |
 | 7 | 1.56 | 1.54 | 0.99 |
 | 8 | 0.80 | 0.59 | 0.73 |
-| 9 | 0.34 | 0.90 | **2.63** |
+| 9 | 0.35 | 0.90 | **2.59** |
 | 15 | 0.50 | 0.52 | 1.03 |
 
 The weekday column is the average of the Mon–Fri daily rates and the weekend column the average of Sat and Sun,
@@ -237,7 +241,7 @@ from `08_weekday_profile.csv`.
 > **Limitation:** House 5's channel probably includes washer-dryer drying, which inflates its cycle count and
 > lowers its per-cycle energy.
 
-> **Limitation:** gap-affected cycles (3–15% per house) are excluded from duration and energy statistics. If
+> **Limitation:** gap-affected cycles (3–14% per house) are excluded from duration and energy statistics. If
 > outages fall disproportionately on long cycles, the medians could be slightly biased downwards.
 
 > **Limitation:** the six homes are a small sample from one area of the UK in 2013–2015. Differences describe

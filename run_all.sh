@@ -20,6 +20,8 @@ echo "== Phase 3: disaggregation model =="
 python3 phase3/wm_nilm.py
 echo "== Phase 4: practical implications =="
 python3 phase4/phase4_analysis.py
+echo "== Audit: clock used by the official cleaned files (read only) =="
+python3 audit/official_timestamp_check.py
 
 if [ "${1:-}" = "--notebooks" ]; then
   for nb in phase1/01_raw_data_inspection_and_cleaning.ipynb phase2/02_washing_machine_eda.ipynb \

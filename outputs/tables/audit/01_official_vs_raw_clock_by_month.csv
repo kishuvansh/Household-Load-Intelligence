@@ -1,0 +1,119 @@
+House,Month,Raw_Part,Clock_Regime,Official_Minus_Raw_Stored_Min,Corr_Best,Minutes,Published_Official_Timestamps_Are
+2,2013-09,1,BST,-60,1.0,18320,UTC (converted)
+2,2013-10,1,BST,-60,0.999,34704,UTC (converted)
+2,2014-02,1,GMT,0,1.0,5369,local = UTC in GMT
+2,2014-03,1,GMT,0,0.94,43008,local = UTC in GMT
+2,2014-04,1,BST,-60,1.0,42771,UTC (converted)
+2,2014-05,1,BST,-60,1.0,44378,UTC (converted)
+2,2014-06,1,BST,-60,1.0,43177,UTC (converted)
+2,2014-07,1,BST,-60,0.999,44147,UTC (converted)
+2,2014-08,1,BST,-60,1.0,41039,UTC (converted)
+2,2014-09,1,BST,-60,0.999,37925,UTC (converted)
+2,2014-10,2,BST,0,0.999,43349,"UK local clock, not UTC"
+2,2014-11,2,GMT,0,0.999,36462,local = UTC in GMT
+2,2014-12,2,GMT,0,0.999,39619,local = UTC in GMT
+2,2015-01,2,GMT,0,0.999,44486,local = UTC in GMT
+2,2015-02,2,GMT,0,0.999,40148,local = UTC in GMT
+2,2015-03,2,GMT,0,1.0,39882,local = UTC in GMT
+2,2015-04,2,BST,0,1.0,35693,"UK local clock, not UTC"
+2,2015-05,2,BST,0,1.0,26598,"UK local clock, not UTC"
+5,2013-09,1,BST,-60,1.0,6431,UTC (converted)
+5,2013-10,1,BST,-60,0.899,44373,UTC (converted)
+5,2013-11,1,GMT,0,1.0,41565,local = UTC in GMT
+5,2013-12,1,GMT,0,1.0,44463,local = UTC in GMT
+5,2014-01,1,GMT,0,1.0,34669,local = UTC in GMT
+5,2014-02,1,GMT,0,0.999,6989,local = UTC in GMT
+5,2014-03,1,GMT,0,0.972,44303,local = UTC in GMT
+5,2014-04,1,BST,-60,1.0,42914,UTC (converted)
+5,2014-05,1,BST,-60,1.0,44529,UTC (converted)
+5,2014-06,1,BST,-60,1.0,43107,UTC (converted)
+5,2014-07,1,BST,-60,1.0,44012,UTC (converted)
+5,2014-08,1,BST,-60,1.0,40998,UTC (converted)
+5,2014-09,1,BST,-60,1.0,37988,UTC (converted)
+5,2014-10,2,BST,0,0.999,43025,"UK local clock, not UTC"
+5,2014-11,2,GMT,0,0.999,42358,local = UTC in GMT
+5,2014-12,2,GMT,0,1.0,43164,local = UTC in GMT
+5,2015-01,2,GMT,0,1.0,44531,local = UTC in GMT
+5,2015-02,2,GMT,0,1.0,40271,local = UTC in GMT
+5,2015-03,2,GMT,0,1.0,39994,local = UTC in GMT
+5,2015-04,2,BST,0,1.0,35771,"UK local clock, not UTC"
+5,2015-05,2,BST,0,1.0,32090,"UK local clock, not UTC"
+5,2015-06,2,BST,0,1.0,31818,"UK local clock, not UTC"
+5,2015-07,2,BST,0,1.0,8241,"UK local clock, not UTC"
+7,2013-11,1,GMT,0,1.0,40149,local = UTC in GMT
+7,2013-12,1,GMT,0,1.0,44367,local = UTC in GMT
+7,2014-01,1,GMT,0,1.0,33074,local = UTC in GMT
+7,2014-03,1,GMT,0,0.928,36234,local = UTC in GMT
+7,2014-04,1,BST,-60,1.0,42914,UTC (converted)
+7,2014-05,1,BST,-60,1.0,44576,UTC (converted)
+7,2014-06,1,BST,-60,1.0,43094,UTC (converted)
+7,2014-07,1,BST,-60,0.999,43741,UTC (converted)
+7,2014-08,1,BST,-60,0.999,40905,UTC (converted)
+7,2014-09,1,BST,-60,0.999,36773,UTC (converted)
+7,2014-10,2,BST,0,0.999,42605,"UK local clock, not UTC"
+7,2014-11,2,GMT,0,0.998,42255,local = UTC in GMT
+7,2014-12,2,GMT,0,0.999,43180,local = UTC in GMT
+7,2015-01,2,GMT,0,0.999,44437,local = UTC in GMT
+7,2015-02,2,GMT,0,0.999,40101,local = UTC in GMT
+7,2015-03,2,GMT,0,1.0,39435,local = UTC in GMT
+7,2015-04,2,BST,0,1.0,32813,"UK local clock, not UTC"
+7,2015-05,2,BST,0,1.0,28741,"UK local clock, not UTC"
+7,2015-06,2,BST,0,1.0,32356,"UK local clock, not UTC"
+7,2015-07,2,BST,0,1.0,10193,"UK local clock, not UTC"
+8,2013-11,1,GMT,0,0.999,40131,local = UTC in GMT
+8,2013-12,1,GMT,0,0.999,44432,local = UTC in GMT
+8,2014-01,1,GMT,0,1.0,33163,local = UTC in GMT
+8,2014-03,1,GMT,0,0.938,35898,local = UTC in GMT
+8,2014-04,1,BST,-60,0.999,43131,UTC (converted)
+8,2014-05,1,BST,-60,0.999,44579,UTC (converted)
+8,2014-06,1,BST,-60,1.0,43096,UTC (converted)
+8,2014-07,1,BST,-60,0.999,43168,UTC (converted)
+8,2014-08,1,BST,-60,0.999,40971,UTC (converted)
+8,2014-09,1,BST,-60,0.999,36786,UTC (converted)
+8,2014-10,2,BST,0,0.996,39904,"UK local clock, not UTC"
+8,2014-11,2,GMT,0,0.998,42004,local = UTC in GMT
+8,2014-12,2,GMT,0,0.998,43115,local = UTC in GMT
+8,2015-01,2,GMT,0,0.998,44585,local = UTC in GMT
+8,2015-02,2,GMT,0,0.999,40307,local = UTC in GMT
+8,2015-03,2,GMT,0,1.0,40074,local = UTC in GMT
+8,2015-04,2,BST,0,1.0,35829,"UK local clock, not UTC"
+8,2015-05,2,BST,0,1.0,14377,"UK local clock, not UTC"
+9,2013-12,1,GMT,0,0.999,20382,local = UTC in GMT
+9,2014-01,1,GMT,0,0.999,33111,local = UTC in GMT
+9,2014-03,1,GMT,0,1.0,36221,local = UTC in GMT
+9,2014-04,1,BST,-60,1.0,18966,UTC (converted)
+9,2014-05,1,BST,-60,1.0,44567,UTC (converted)
+9,2014-06,1,BST,-60,1.0,43083,UTC (converted)
+9,2014-07,1,BST,-60,1.0,43900,UTC (converted)
+9,2014-08,1,BST,-60,1.0,40997,UTC (converted)
+9,2014-09,1,BST,-60,1.0,36821,UTC (converted)
+9,2014-10,2,BST,0,0.999,42687,"UK local clock, not UTC"
+9,2014-11,2,GMT,0,0.999,42369,local = UTC in GMT
+9,2014-12,2,GMT,0,0.999,43183,local = UTC in GMT
+9,2015-01,2,GMT,0,0.999,44617,local = UTC in GMT
+9,2015-02,2,GMT,0,1.0,40314,local = UTC in GMT
+9,2015-03,2,GMT,0,1.0,40077,local = UTC in GMT
+9,2015-04,2,BST,0,1.0,35925,"UK local clock, not UTC"
+9,2015-05,2,BST,0,1.0,32183,"UK local clock, not UTC"
+9,2015-06,2,BST,0,1.0,32356,"UK local clock, not UTC"
+9,2015-07,2,BST,0,1.0,11106,"UK local clock, not UTC"
+15,2013-12,1,GMT,0,0.999,20460,local = UTC in GMT
+15,2014-01,1,GMT,0,0.999,34728,local = UTC in GMT
+15,2014-02,1,GMT,0,0.999,7035,local = UTC in GMT
+15,2014-03,1,GMT,0,0.964,34946,local = UTC in GMT
+15,2014-04,1,BST,-60,0.999,42797,UTC (converted)
+15,2014-05,1,BST,-60,0.999,44639,UTC (converted)
+15,2014-06,1,BST,-60,1.0,43183,UTC (converted)
+15,2014-07,1,BST,-60,0.999,44126,UTC (converted)
+15,2014-08,1,BST,-60,0.999,41107,UTC (converted)
+15,2014-09,1,BST,-60,0.999,29652,UTC (converted)
+15,2014-10,2,BST,0,0.999,43230,"UK local clock, not UTC"
+15,2014-11,2,GMT,0,0.999,36465,local = UTC in GMT
+15,2014-12,2,GMT,0,0.999,36048,local = UTC in GMT
+15,2015-01,2,GMT,0,0.999,44616,local = UTC in GMT
+15,2015-02,2,GMT,0,1.0,40313,local = UTC in GMT
+15,2015-03,2,GMT,0,1.0,40015,local = UTC in GMT
+15,2015-04,2,BST,0,0.999,35909,"UK local clock, not UTC"
+15,2015-05,2,BST,0,1.0,32173,"UK local clock, not UTC"
+15,2015-06,2,BST,0,1.0,32353,"UK local clock, not UTC"
+15,2015-07,2,BST,0,1.0,10207,"UK local clock, not UTC"
