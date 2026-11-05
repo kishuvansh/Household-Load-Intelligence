@@ -29,3 +29,7 @@ Data/processed/phase3/
 
 # Assignment brief (not part of the submission)
 Flock_Energy - Data Science.pdf
+
+# Baseline snapshot before the official-clock correction (local only)
+.baseline_pre_clockfix/
+Data/processed/phase1/
